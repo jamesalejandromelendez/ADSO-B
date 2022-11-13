@@ -9,7 +9,3 @@ if y == 2:
     print("el numero ",num, "es primo ")
 else:
     print("el numero ",num, "no es primo")
-
-
-
-

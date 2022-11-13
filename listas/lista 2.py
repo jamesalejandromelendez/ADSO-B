@@ -1,17 +1,14 @@
 import random
-vec=[]
-tam = 0
-while tam<10 or tam>25:
-    tam = int(round(random.random()*100))
-for i in range(tam):
-    vec.insert(i,round(random.random()*100))
+vecprimos=[]
+vec=[int(random.random()*100) for i in range(10,25)]
 print(vec)
 for x in range (len(vec)):
- while x <= vec:
-    if vec % x == 0:
-        y = y + 1
-    x = x + 1 
- if y == 2:
-    print("el numero ",vec, "es primo ")
- else:
-    print("el numero ",vec, "no es primo")
+    contar=0
+    y=1
+    while y <=vec[x]:
+        if vec[x] % y == 0:
+            contar+=1
+        y+=1
+    if contar == 2:
+        vecprimos.append(vec[x])
+print("los números primos son:",len(vecprimos),"y son:",vecprimos)

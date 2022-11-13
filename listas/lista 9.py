@@ -1,19 +1,14 @@
 import random
-tam, prom = 0, 0
-vec=[]
-suma = 0
-while tam<10 or tam>25:
-    tam = int(round(random.random()*100))
-for i in range(tam):
-    vec.insert(i,round(random.random()*100))
+tam, prom,suma = 0, 0, 0
+vec=[int(random.random()*100) for i in range(10,25)]
 print(vec)
-s = True  
-
-while s:
-    s = False  
-    for i in range(len(vec) - 1):
-        if vec[i] > vec[i + 1]:
-            s = True  
-            vec[i], vec[i + 1] = vec[i + 1], vec[i]
-print (vec)
-
+for i in range(len(vec) - 1):
+    for y in range(i+1,len(vec)):
+        if vec[i] > vec[y]:
+            vec[i], vec[y] = vec[y], vec[i]
+print("Arreglo de menor a mayor:\n",vec)
+if tam%2>0: #es impar
+    mediana=vec[tam//2]
+else:
+    mediana=(vec[tam//2] + vec[tam//2 -1])/2
+print("la mediana es:",mediana)
