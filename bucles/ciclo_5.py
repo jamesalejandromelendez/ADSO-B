@@ -12,4 +12,5 @@ for i in range(2, lista + 1):
     if primos == True:
         print(' ',i, end='')
         cont += 1
-print('\nHay %u números primos.' % cont )
+
+print('\nHay %i números primos.' % cont )
