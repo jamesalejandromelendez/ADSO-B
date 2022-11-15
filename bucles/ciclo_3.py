@@ -6,10 +6,10 @@ def perfecto (num):
             total=total+i
         i=i+1
     if total==num:
-        print("el numero es perfecto ")
+        return("el numero es perfecto ")
     else:
-        print(" el numero no esperfecto")
+        return(" el numero no esperfecto")
 
 num = int(input("ingrese su numero "))
-perfecto(num)
+print(perfecto(num))
 

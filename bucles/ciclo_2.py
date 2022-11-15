@@ -6,9 +6,9 @@ def primo (num):
             y += 1
         x += 1
     if y == 2:
-        print("el numero ",num, "es primo")
+        return"el numero ",num, "es primo"
     else:
-        print("el numero ",num, "no es primo")
+        return"el numero ",num, "no es primo"
 
 num = int(input("ingresa tu numero "))
-primo(num)
+print(primo(num))
