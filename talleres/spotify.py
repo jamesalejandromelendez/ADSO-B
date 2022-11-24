@@ -14,8 +14,9 @@ def anadircancion(canciones):
         if cancion == "":
             break
         g=anadirgenero(genero)
-        canciones["NOMBRE DE LA CANCION: ",cancion]=genero
-        print(canciones)
+        canciones["NOMBRE DE LA CANCION:", cancion ]=genero
+        for i in canciones.items():
+            print(i)
 def anadirlista (spotify):
     while True:
         nombre = input("ingresa el nombre del artista ")
@@ -38,7 +39,8 @@ def n():
             x=input("nombre del artista al buscar")
             if x in spotify:
                 print("si se encuentra registrado\n y cuenta con estas canciones")
-                print(spotify[x])
+                for i in canciones.items():
+                    print(i)
             else:
                 print("no se encuentra registrado ")
         elif m=="4":
