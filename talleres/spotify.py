@@ -27,7 +27,7 @@ def anadirlista (spotify):
 
 def n():
     while True:
-        m=input("presiona 1 para agregar un artista\npresiona 2 para agregar cancion\npresiona 3 para buscar artista\npresiona 4 para eliminar un artista\npresiona 5 para buscar una cancion\n")
+        m=input("presiona 1 para agregar un artista\npresiona 2 para agregar cancion\npresiona 3 para buscar artista\npresiona 4 para eliminar un artista\npresiona 5 para buscar una cancion\npresione 6 para ver el listado de artistas\n")
         if m=="":
             break
         if m =="1":
@@ -46,6 +46,9 @@ def n():
             del spotify[E]
         elif m=="5":
             print()
+        elif m=="6":
+            for i in spotify.keys():
+                print(i)
         else:
             print("lo sentimos")
 n()
