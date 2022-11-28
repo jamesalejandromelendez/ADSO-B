@@ -13,10 +13,12 @@ def agregarcancion(my_list):
             cancion = input("Ingresa una cancion: ")
             genero = input("ingresa el genero: ")
             duracion = input("duracion de la cancion: ")
-            z={"cancion":cancion,"genero":genero,"duracion":duracion}
+            canciones = {"cancion":cancion,"genero":genero,"duracion":duracion}
             if name in my_list:
-                my_list[name] = z,
-            print(my_list)
+                my_list[name] += (canciones,)
+            else:
+                my_list[name] = (canciones,)
+        print(my_list)
         
 def n():
     while True:
