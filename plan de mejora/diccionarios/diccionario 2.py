@@ -1,13 +1,26 @@
-"""El director de un colegio desea realizar un programa
-que procese un archivo de registros correspondiente
-a los diferentes alumnos del centro a fin de obtener
-los siguientes datos:
-• Nota más alta y número de identificación del alumno correspondiente.
-• Nota media por curso.
-• Nota media del colegio.
-NOTA: Si existen varios alumnos con la misma nota
-más alta, se deberán visualizar todos ellos."""
-colegio={}
-
-
+"""Se dispone de las notas de cuarenta alumnos. Cada
+uno de ellos puede tener una o varias notas. Escribir
+un algoritmo que permita obtener la media de cada
+alumno y la media de la clase a partir de la entrada
+de las notas desde el terminal."""
+alumnos = {}
+while True:
+    nombre = input("Ingresa el nombre del estudiante: ")
+    if nombre == "":
+        break
+    nota = int(input("Ingresa la calificación del estudiante (0-10): "))
+    if nombre in alumnos:
+        alumnos[nombre] += (nota)
+    else:
+        alumnos[nombre] = (nota)
+for nombre in sorted(alumnos.keys()):
+    puntuacion = 0
+    contador = 0
+    for score in alumnos[nombre]:
+        puntuacion += score
+        contador += 1
+        total = puntuacion / contador
+    print(nombre, "->", total)
+total = alumnos.values
+print(total)
 

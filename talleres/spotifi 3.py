@@ -12,30 +12,24 @@ def añadircancion(my_list):
                 break
             cancion = input("Ingresa una cancion: ")
             genero = input("ingresa el genero: ")
-            duracion = input("duracion de la cancion: ")
+            duracion = int(input("duracion de la cancion: "))
             canciones = {"cancion":cancion,"genero":genero,"duracion":duracion}
-            if name in my_list:
-                my_list[name] += (canciones,)
-            else:
-                my_list[name] = (canciones,)
+            my_list[name] = (canciones)
         print(my_list)
     except:
         print("lamentamos el error")
 
 def buscarcancion ():
-    try:
+
         x=input("nombre del artista: ")
-        #buscar=input('¿Que cancion desea buscar?: ') 
-        #for a in (my_list.values()): 
+        buscar=input('¿Que cancion desea buscar?: ') 
         if x in my_list: 
-            print(my_list[x]["cancion"])  
-        else:  
-            print('no se encuentra la cancion')
-    except TypeError:
-        print("error en el sistema ")
-    except:
-        print("lo sentimos ")
-        
+            for i,a in my_list.items():
+                if buscar in a["cancion"]:
+                    print("si se encuentra en ",i)
+                else:  
+                    print()
+
 def buscarartista():
     x=input("nombre del artista al buscar ")
     if x in my_list:
@@ -60,6 +54,11 @@ def eliminar(my_list):
     del my_list[E]
 
 def maslarga():
+    score = 0
+    for i,a in my_list.items():
+                if  score < a["duracion"]:
+                    score = a["duracion"]
+                print("la cancion mas larga es: ",score)
     
     print()
 
