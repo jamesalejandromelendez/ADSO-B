@@ -1,4 +1,4 @@
-"""Escribir un programa que seleccione la operación
+"""4.11: Escribir un programa que seleccione la operación
 aritmética a ejecutar entre dos números dependiendo
 del valor de una variable denominada seleccionOp."""
 print("tipos de operaciones\n '+'para sumar\n '-'para restar\n '*'para multiplicar\n '/'para dividir")

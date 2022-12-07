@@ -1,4 +1,4 @@
-"""Se desea realizar una estadística de los pesos de los
+"""4.7: Se desea realizar una estadística de los pesos de los
 alumnos de un colegio de acuerdo a la siguiente tabla:
 Alumnos de menos de 40 kg.
 Alumnos entre 40 y 50 kg.

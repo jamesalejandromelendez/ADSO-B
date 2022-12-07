@@ -1,4 +1,4 @@
-"""Escribir un algoritmo que permita sumar el número
+"""7.19: Escribir un algoritmo que permita sumar el número
 de elementos positivos y el de negativos de una tabla
 T de n filas y m columnas."""
 from random import randint

@@ -1,4 +1,4 @@
-"""Dada una lista L de N elementos, diseñar un algoritmo que calcule de forma independiente la suma de
+"""7.16: Dada una lista L de N elementos, diseñar un algoritmo que calcule de forma independiente la suma de
 los números pares y la suma de los números impares."""
 from random import randint
 lista=[]

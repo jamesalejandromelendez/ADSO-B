@@ -1,4 +1,4 @@
-"""Diseñar un algoritmo que permita crear un archivo
+"""9.1: Diseñar un algoritmo que permita crear un archivo
 AGENDA de direcciones cuyos registros constan de los
 siguientes campos:
 NOMBRE

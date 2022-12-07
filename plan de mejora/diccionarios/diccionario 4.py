@@ -1,4 +1,4 @@
-""". Diseñar un algoritmo que permita modificar el contenido de alguno de los 
+"""9.8: Diseñar un algoritmo que permita modificar el contenido de alguno de los 
 registros del archivo secuencial BIBLIOTECA mediante datos introducidos por
 teclado."""
 biblioteca = {}

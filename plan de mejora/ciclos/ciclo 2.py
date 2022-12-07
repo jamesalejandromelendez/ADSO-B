@@ -1,4 +1,4 @@
-
+"""Ejercicio de practica"""
 while True:
     horas=int(input("numero de horas: "))
     if horas == 0:

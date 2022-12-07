@@ -1,4 +1,4 @@
-"""Diseñar un procedimiento que acepte un número de
+"""6.6: Diseñar un procedimiento que acepte un número de
 mes, un número de día y un número de año y los visualice en el formato
 dd/mm/aa
  Por ejemplo, los valores 19,09,1987 se visualizarían
