@@ -1,5 +1,8 @@
-n = int(input("Introduce la altura del triángulo (entero positivo): "))
-for i in range(n):
-    for j in range(i+1):
-        print("*", end="")
-    print("")
+"""Calcular la operación x n sin utilizar la función pow"""
+n = int(input("numero base: "))
+e = int(input("numero exponente: "))
+s = 0
+for i in range (e):
+    total = n**e 
+    s += total
+print(total)

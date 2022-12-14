@@ -14,7 +14,7 @@ def añadircancion(my_list):
             genero = input("ingresa el genero: ")
             duracion = int(input("duracion de la cancion: "))
             canciones = {"cancion":cancion,"genero":genero,"duracion":duracion}
-            my_list[name] = (canciones)
+            my_list[name] = (canciones,)
         print(my_list)
     except:
         print("lamentamos el error")
@@ -58,8 +58,7 @@ def maslarga():
     for i,a in my_list.items():
                 if  score < a["duracion"]:
                     score = a["duracion"]
-                print("la cancion mas larga es: ",score)
-    
+    print("la cancion mas larga es: ",a, "con una duracion de ",score)
     print()
 
 def ordenarLista(my_list):
@@ -68,7 +67,7 @@ def ordenarLista(my_list):
 
 while True:
     print("bienvenido a spotify")
-    m=input("presiona 1 para agregar un artista\npresiona 2 para agregar cancion\npresiona 3 para buscar artista\npresiona 4 para eliminar un artista\npresiona 5 para buscar una cancion\npresione 6 para ver el listado de artistas\npresione 7 para ordenar los artistas\n")
+    m=input("presiona 1 para agregar un artista\npresiona 2 para agregar cancion\npresiona 3 para buscar artista\npresiona 4 para eliminar un artista\npresiona 5 para buscar una cancion\npresione 6 para ver el listado de artistas\npresione 7 para ordenar los artistas\npresione 8 paraver la cancion mas larga\n : ")
     if m=="":
         print("hasta pronto")
         break
@@ -86,5 +85,7 @@ while True:
         listadoartistas()
     elif m=="7":
         ordenarLista()
+    elif m == "8":
+        maslarga()
     else:
         print("por favor agrega una opcion que este dentro del menu ")
