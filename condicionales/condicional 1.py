@@ -6,3 +6,4 @@ menor = min(x,y,z)
 mayor = max(x,y,z)
 valor_medio = (x + y + z) - menor - mayor
 print ("el valor medio es", valor_medio)
+

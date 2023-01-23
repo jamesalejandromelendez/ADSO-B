@@ -14,7 +14,10 @@ def añadircancion(my_list):
             genero = input("ingresa el genero: ")
             duracion = int(input("duracion de la cancion: "))
             canciones = {"cancion":cancion,"genero":genero,"duracion":duracion}
-            my_list[name] = (canciones,)
+            if name in my_list:
+                my_list[name] += (canciones),
+            else:
+                my_list[name] = (canciones),
         print(my_list)
     except:
         print("lamentamos el error")
@@ -40,7 +43,7 @@ def buscarartista():
     else:
             print("no se encuentra registrado ")
 
-def listadoartistas(my_list):
+def listadoartistas():
     x=input("desea ver el listado con canciones? ")
     if x=="si":
         for y, z in my_list.items():
