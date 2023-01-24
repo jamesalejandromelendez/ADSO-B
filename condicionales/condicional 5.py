@@ -3,13 +3,13 @@ y = ("no")
 print ("para poder jugar responde con un SI o un NO")
 print ("Colon descubrió América?")
 res = (input("la respuesta es "))
-if res == x: 
+if res == x or res != y: 
     print(" La independencia de Colombia fue en el año 1810?") 
     res = (input("la respuesta es "))
-    if res == x:
+    if res == x or res != y:
         print("The Doors fue un grupo de rock Americano?")
         res = (input("la respuesta es "))
-        if res == x:
+        if res == x or res != y:
             print("                            FELICIDADES  GANASTE EL JUEGO")
         else:
             print ("incorrecta\njuego terminado") 
