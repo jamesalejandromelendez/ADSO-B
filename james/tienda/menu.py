@@ -1,6 +1,9 @@
 import operaciones
 
-productos = {'cafe':3000,'jabon':10000,'lapiz':1000}
+print(dir(operaciones))
+
+
+"""productos = {'cafe':3000,'jabon':10000,'lapiz':1000}
 carro = {}
 while True:
     u = input("cual de nuestrosservicios desea tomar?\n-agregar\n-comprar\n-eliminar\n-devolucion\n : ")
@@ -13,6 +16,6 @@ while True:
     elif u == "eliminar":
          print(operaciones.eliminar(productos))
     elif u == 'devolucion':
-        print(operaciones.devolucion(productos))
+        print(operaciones.devolucion(productos))"""
 
 
