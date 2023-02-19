@@ -4,7 +4,7 @@ máxima de la tupla, muestra el contenido de esa posición sino muestra un mensa
 termina cuando el usuario introduce un cero."""
 def contenido():
     while True:
-        numero = int(input("Dame un numero: "))
+        numero = int(input("Dame un numero entero: "))
         if numero==0:
             break
         else:
@@ -16,3 +16,6 @@ def contenido():
 meses = ("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre")
 print('oprime el numero 0 para salir ')
 contenido()
+
+
+
