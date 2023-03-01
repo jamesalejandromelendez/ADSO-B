@@ -12,6 +12,8 @@ class Persona:#crea una clase llamada persona
     def metodo(self):#crea una funcion o un metodo 
         print('Soy un método')#imprime un mensaje 'soy un metodo'
 
+    def documento(self,documento):
+        self.__documento=documento
 ob=Persona('Ana')#se le asigna al objeto 'ob' la clase persona
 print(ob.getNombre())#imprime y llama la funcion de la clase presona 'getnombre'
 ob.setNombre('Maria')#llama la funcion de la clase 'setnombre'
