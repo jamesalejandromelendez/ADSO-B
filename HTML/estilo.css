@@ -7,7 +7,7 @@
 body {
     width: 100%;
     height: 120px;
-    background-color: rgb(39, 232, 196)#96DCD6;
+    background-color: rgb(255, 255, 255)#96DCD6;
 }
 
 header {
@@ -15,17 +15,14 @@ header {
     height: 205px;
     margin: auto;
     padding-top: 1px;
-    background-color: #96DCD6;
+    background-color: #ffffff;
 }
 
 body header .cab_izq {
     width: 22%;
     height: 200px;
     float: left;
-    margin-left: 7px;
-    margin-top: 2px;
-    background-color: #96DCD6;
-    padding: 1px;
+    background-color: #ffffff;
 }
 
 body header .cab_cen {
@@ -40,7 +37,7 @@ body header .cab_cen .titulo {
     color: rgb(0, 0, 0);
     font-size: 35px;
     margin: 10px;
-    background-color: #96DCD6;
+    background-color: #e4f9d7;
 }
 
 body header .cab_cen .enun {
@@ -61,21 +58,43 @@ body header .cab_der {
 
 nav {
     width: 100%;
-    height: 60px;
+    height: 59px;
     background-color: rgb(74, 211, 1);
 }
 
 nav .image_nav {
-    width: 18%;
-    height: 85px;
+    width: 10%;
+    height: 10px;
     float: left;
     flex-direction: row;
 }
 
-nav .noche {
-    width: 160%;
-    height: 60%;
-    background-color: rgb(255, 255, 255);
+nav .image_nav2 {
+    width: 5%;
+    height: 40px;
+    float: right;
+    flex-direction: row;
+}
+
+section .cab_izq1 {
+    width: 22%;
+    height: 400px;
+    float: left;
+    margin-left: 7px;
+    margin-top: -1px;
+    background-color: #000000;
+    padding: 1px;
+}
+
+section .cab_der1 {
+    width: 22%;
+    height: 400px;
+    float: left;
+    margin-left: 700px;
+    margin-top: -405px;
+    background-color: #000000;
+    padding: 1px;
+    float: right;
 }
 
 nav ul {
@@ -84,9 +103,9 @@ nav ul {
 }
 
 nav ul li a {
-    margin-left: 5px;
-    margin-right: 199px;
+    margin-left: 10px;
+    margin-right: 100px;
     color: rgb(255, 255, 255);
-    font-size: 30px;
-    float: left;
+    font-size: 28px;
+    float: center;
 }

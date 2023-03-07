@@ -1,8 +1,10 @@
 class Empleado:
     def __init__(self,nombre,cargo,salario):
+        self.__cont=0
         self.__nombre=nombre 
         self.__cargo=cargo 
         self.__salario=salario
+        print('numero de veces',self.__cont)
         
     def setinformacion(self,nombre,cargo,salario ):
         self.__nombre = nombre
@@ -16,10 +18,10 @@ class Empleado:
     def imcremento(self):
         if self.__salario == 1160000:
             i=(self.__salario*16.3)//100
-            return i+self.__salario
+            return 'su salario mas el incremento de ipc es: ',i+self.__salario
         else:
             a=(self.__salario*13.3)//100
-            return a+self.__salario
+            return 'su salario mas el incremento de ipc es: ',a+self.__salario
         
     def extras(self):
         x=int(input('horas extras: '))
@@ -30,7 +32,7 @@ class Empleado:
             return 'no se puede realizar mas de dos horas diarias'
     
     def sucecion(self):
-        print('hola')        
+        self.__cont+=1        
     def getdatos(self):
         return self.__nombre, self.__cargo, self.__salario
             
@@ -39,3 +41,11 @@ print(empleado.hora())
 print(empleado.imcremento())
 print(empleado.getdatos())
 print(empleado.extras())
+empleado.sucecion()
+
+trabajador = Empleado('diego','supervisor',1170000)
+print(trabajador.hora())
+print(trabajador.imcremento())
+print(trabajador.getdatos())
+print(trabajador.extras())
+trabajador.sucecion()
