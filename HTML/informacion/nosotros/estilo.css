@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(255, 255, 255)#96DCD6;
+}
+
+header {
+    width: 100%;
+    height: 205px;
+    margin: auto;
+    padding-top: 10px;
+    background-color: #fffdfd;
+}
+
+nav {
+    width: 100%;
+    height: 39px;
+    background-color: rgb(74, 211, 1);
+}
+
+nav ul {
+    display: inline-flex;
+    align-items: center;
+}
+
+nav ul li a {
+    margin-left: 10px;
+    margin-right: 90px;
+    color: rgb(255, 255, 255);
+    font-size: 32px;
+    float: right;
+}
+
+body header .cab_cen .titulo{
+    font-size:medium;
+    font-family: cursive;
+}
+
+body header .cab_cen .titulo2{
+    font-size:medium;
+    font-family: cursive;
+}
+
+body header .cab_cen .titulo3{
+    font-size:medium;
+    font-family: cursive;
+}
+
+body header .cab_cen .enun{
+    width: 100%;
+    padding: 40px;
+    margin-left: 2px;
+    
+}
+
+body header .cab_izq{
+    width: 4%;
+    height: 800px;
+    float: left;
+    background-color: #ffffff;
+}

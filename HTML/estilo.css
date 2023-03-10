@@ -76,27 +76,6 @@ nav .image_nav2 {
     flex-direction: row;
 }
 
-section .cab_izq1 {
-    width: 22%;
-    height: 400px;
-    float: left;
-    margin-left: 7px;
-    margin-top: -1px;
-    background-color: #000000;
-    padding: 1px;
-}
-
-section .cab_der1 {
-    width: 22%;
-    height: 400px;
-    float: left;
-    margin-left: 700px;
-    margin-top: -405px;
-    background-color: #000000;
-    padding: 1px;
-    float: right;
-}
-
 nav ul {
     display: inline-flex;
     align-items: center;
@@ -108,4 +87,9 @@ nav ul li a {
     color: rgb(255, 255, 255);
     font-size: 28px;
     float: center;
+}
+
+section .cab_cen1:hover {
+    filter: blur(5px);
+    filter: saturate(150%);
 }
