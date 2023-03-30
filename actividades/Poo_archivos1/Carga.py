@@ -8,3 +8,4 @@ class Carga(Vehiculo):
         return self.__capacidad    
     def getEjes(self):
         return self.__ejes
+    

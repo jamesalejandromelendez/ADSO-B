@@ -6,4 +6,5 @@ class Conductor:
         return self.__nombre
     def getDocumento(self):
         return self.__documento
+    
         

@@ -16,3 +16,4 @@ cadCarga=obCarga.getPlaca()+','+cadConductor+','+str(obCarga.getCapacidad())+','
 
 with open('actividades/Poo_archivos1/listado.txt','a') as flujo:
     flujo.write(cadCarga+'\n')
+    
