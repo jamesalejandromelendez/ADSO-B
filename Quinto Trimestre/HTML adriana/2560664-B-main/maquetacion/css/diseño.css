@@ -1,0 +1,112 @@
+/*-----------
+configuracion global
+----------*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{ 
+    background: white; 
+}
+
+footer{
+    background:red;
+}
+/*-----------
+configuracion encabezado
+----------*/
+.encabezado{
+    padding-top:  50px;
+    background: rgb(81, 72, 72);
+    width: 100%;
+    height: 100px;
+}
+.encabezado h1{
+    font-size: 40px;
+    color: azure;
+    text-align: center;
+}
+/*-----------
+configuracion menu
+----------*/
+nav {
+    margin-top: 50px;
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+}
+.navegacion {
+    height: 40px;
+    background: rgb(222, 104, 8);
+    align-content: center;
+}
+.navegacion ul{
+    list-style: none;
+}
+.menu>li {
+    position: relative;
+    display: inline-block;
+    
+}
+.menu>li>a {
+    display: block;
+    padding: 10px 40px;
+    color: #dfe0d9;
+    font-size: 16px;
+    text-decoration: none;
+}
+/*-----------
+configuracion contenido
+----------*/
+
+.contenido {
+    padding: 44px;
+    margin:0 140px 0 140px;
+}
+.encabezado__contenido{
+    display: flex;
+    position: relative;
+    padding: 44px;
+    background-size: 100%;
+    border-radius: 22px;
+    margin: 100px 140px 0 140px;
+}
+
+.encabezado__contenido h2{
+    display: flex;
+    position: relative;
+    color: beige;
+    z-index: 2;
+    width: 100%;
+}
+
+.encabezado__contenido img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+}
+
+.parrafo {
+    display: table;
+    margin:0 140px 0 140px;
+    text-align: justify;
+    padding-top: 40px;
+  column-count: 2;
+}
+
+.pie{
+    padding: 10px;
+    background: rgb(81, 72, 72);
+    width: 100%;
+    height: 50px;
+}
+.pie h2{
+    font-size: 40px;
+    color: azure;
+    text-align: center;
+}

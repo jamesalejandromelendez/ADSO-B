@@ -1,0 +1,32 @@
+body{
+    background: yellow; 
+ }
+ h1{
+     font-size: 2em;
+ }
+ img{
+     width: 50px;
+ }
+ div{  
+     margin-bottom: 100px;
+ }
+
+.div1{
+    background-color: rgb(225, 24, 24);
+    margin:0 140px 0 140px;
+    width: 80%;
+    border-radius: 5px;
+}
+.div1 h1{
+    font-size: 20px;
+    color: aliceblue;
+}
+.titulo1{
+    
+    margin: 0;
+ }
+ .titulo2{
+    margin-left: 75px;
+    position: relative;
+}
+

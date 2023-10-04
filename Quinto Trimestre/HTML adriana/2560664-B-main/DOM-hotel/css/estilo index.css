@@ -1,0 +1,415 @@
+/*RENDERIZADO GLOBAL*/
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Victor+Mono:wght@700&display=swap');
+
+/* REINICIO IMPROVISADO DE CSS */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* REDERIZACION GENERAL */
+
+body {
+    margin: 0 auto;
+    padding: 22px 0;
+    width: 940px;
+    font-family: 'Victor Mono', monospace;
+    background: #F0F0F0;
+}
+
+
+h1,
+h2 {
+    font-size: 28px;
+    line-height: 44px;
+    padding: 22px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+h3 {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 11px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+p {
+    padding-bottom: 22px;
+}
+
+/*ENCABEZADO*/
+.titulo {
+    font-size: 50px;
+    color: #7e7468;
+    margin-top: 20px;
+    padding-left: 60px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    float: left;
+}
+
+.logo:hover {
+    transform: scale(1.5);
+}
+
+/*MENU DE NAVEGACION*/
+
+nav {
+    margin-top: 50px;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    width: 100%;
+    background: #444343;
+    font-family: 'Victor Mono', monospace;
+    padding-bottom: 10px;
+}
+
+.navegacion {
+   
+    height: 40px;
+    align-content: center;
+    padding-left: 50px;
+}
+
+.navegacion ul {
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    display: inline-block;
+}
+
+.menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #eff1ea;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: #91e67c;
+    transition: all .3s;
+}
+
+
+/*SUBMENU*/
+
+.submenu {
+    position: absolute;
+    width: 180px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+    background: linear-gradient(to bottom, rgb(143, 146, 137), #2a2b29);
+    align-content: center;
+    border-radius: 5px;
+}
+
+.submenu li a {
+    display: block;
+    padding: 10px;
+    color: #d9f499;
+    text-decoration: none;
+    text-align: center;
+}
+
+.menu li:hover .submenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*BANNER ESTATICO*/
+
+.banner_estatico {
+    display: flex;
+    position: relative;
+    margin-top: 120px;
+    padding: 20px;
+    background-size: 100%;
+    border-radius: 22px;
+    font-family: 'Victor Mono', monospace;
+    background-image: url(../img/banner3.jpg);
+    box-shadow: 3px 3px 7px #0f9b0f ;
+}
+
+.banner_estatico h2,
+.banner_estatico p {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.banner_estatico h2 {
+    display: flex;
+    padding:  100px 0 0 8px;
+    font-weight: normal;
+    color: #0f9b0f;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Victor Mono', monospace;
+    
+}
+
+.banner_estatico p {
+    padding: 0 0 0 70px;
+    color: #2a2929;
+    font-size: 20px;
+    text-align: justify;
+    text-decoration: dotted;
+}
+
+.banner_estatico img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 22px;
+}
+
+
+/*RENDERIZACION*/
+
+.contenido {
+    display: table;
+}
+
+.entidad {
+    display: table-cell;
+    width: 620px;
+    padding-right: 22px;
+}
+
+/*SECCION ARTICULO*/
+
+.articulo p{
+    text-align: justify;
+}
+.articulo header p,
+.articulo header p a {
+    font-size: 14px;
+    font-style: italic;
+    color: #777;
+    
+}
+
+.articulo header p a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+.articulo div {
+    /* El recuento de columnas  */
+    column-count: 2;
+    /* El espacio entre columnas  */
+    column-gap: 50px; 
+}
+
+.articulo img {
+    margin: 22px 0;
+    box-shadow: 3px 3px 7px #777;
+    border-radius: 5px;
+}
+
+
+/*SECCION COMENTARIOS*/
+
+#comentarios {
+    margin-top: 21px;
+    padding-top: 22px;
+    border-top: 1px solid #d7d7d7;
+}
+
+#comentarios article {
+    display: table;
+    padding: 22px;
+}
+
+.pub, .articulo a {
+    color: #999;
+    font-style: italic;
+}
+
+#comentarios article:nth-child(odd) {
+    padding: 21px;
+    background: #E3E3E3;
+    border: 1px solid #d7d7d7;
+    border-radius: 11px;
+}
+
+#comentarios article div {
+    display: table-cell;
+    width: 220px;
+    padding-right: 22px;
+}
+
+#comentarios article div a {
+    display: block;
+    font-weight: bold;
+    color: #000;
+}
+
+#comentarios article div a:hover {
+    text-decoration: none;
+}
+
+#comentarios article p {
+    padding: 0;
+}
+
+/*SECCION FORMULARIO*/
+
+form {
+    margin-top: 21px;
+    padding-top: 22px;
+    border-top: 1px solid #d7d7d7;
+}
+
+form p {
+    display: table;
+    margin-bottom: 22px;
+    padding: 0 22px;
+}
+
+form label {
+    display: table-cell;
+    width: 140px;
+    padding-right: 20px;
+    text-align: right;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="url"] {
+    display: table-cell;
+    width: 300px;
+    height: 20px;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+}
+
+form input[type="submit"] {
+    display: table-cell;
+    width: 80px;
+    height: 30px;
+    background-color: #373738;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 3px;
+    font-family: 'Victor Mono', monospace;
+}
+
+form textarea {
+    width: 300px;
+    height: 100px;
+    border: 1px solid #d7d7d7;
+    
+}
+
+form input[type="submit"] {
+    margin-left: 162px;
+}
+
+/*SECCION LATERAL*/
+
+aside {
+    display: table-cell;
+    width: 300px;
+}
+aside section {
+    margin: 22px 0 0 22px;
+    padding: 11px 22px;
+    border-radius: 11px;
+}
+aside section a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    margin: 0 0 0 22px;
+    list-style: none;
+    padding-bottom: 10px;
+}
+aside section a:hover {
+    text-decoration: underline;
+}
+section img{
+    border-radius: 3px;
+    box-shadow: 3px 3px 7px #777;
+}
+
+/*SECCION FOOTER*/
+footer{
+    position: absolute;
+    margin-top: 50px;
+    z-index: 2;
+    left: 0;
+    width: 100%;
+    background: #444343;
+    font-family: 'Victor Mono', monospace;
+    padding-bottom: 20px;
+}
+.abajo{
+    padding-top: 30px;
+    align-content: center;
+    padding-left: 80px;
+}
+.abajo section{
+    display: table-cell;
+    width: 300px;
+    position: relative;
+    padding-right: 100px;
+}
+
+.abajo section h3{
+    color: #E3E3E3;
+    font-size: 22px;
+}
+
+.abajo section p{  
+    color: #E3E3E3;
+    font-size: 18px;
+}
+
+.sec1{
+    text-align: justify;
+}
+.abajo section a{
+    color: #999;
+}
+
+.abajo a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.abajo ul {
+    margin: 0 0 0 40px;
+    list-style: square;
+    color: #565656;
+}
+
+.abajo ul li a {
+    display: block;
+}
+
+.abajo section i{
+    font-size: 40px;
+    padding-right: 40px;
+}

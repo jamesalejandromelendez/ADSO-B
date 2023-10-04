@@ -1,0 +1,105 @@
+/*------------- 
+estilo global 
+--------------*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #fff1dc;
+}
+
+header{
+    background:linear-gradient(to right, #000000, #303030);;
+    width: 100%;
+    height: 100%;
+}
+
+.logo{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+h1{
+    position: relative;
+    margin-left: 60px;
+    color: aliceblue;
+    padding: 10px;
+    margin-left: 43%;
+}
+
+.contenido{
+    width: 500px;
+    margin: 113px auto;
+    padding: 20px;
+    background-color: rgb(205, 129, 30);
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+ul{
+    background:linear-gradient(to right, #000000, #303030);;
+    width: 100%;
+    height: 100%;
+    display: flex-end;
+    margin: 0;
+    text-align: center;
+    padding: 20px;
+}
+
+ul li{
+    display: inline-block;
+}
+
+ul a{
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(205, 129, 30);
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+}
+
+ul a:hover{
+    background: #ffb14a;
+}
+
+.titulo{
+    text-align: center;
+    padding:  10px 10px 10px 10px;
+    color: rgb(255, 255, 255);
+    margin-bottom:30px ;
+    background: rgb(0, 0, 0);
+    display: inline-block;
+    border-radius: 10px;
+}
+
+.entrada{
+    padding:  20px 10px 10px 10px;
+    margin-left: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn {
+    background-color: rgb(205, 129, 30);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 10px 16px;
+    border-radius: 5px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-radius: 10px;
+    background: #ffb14a;
+}

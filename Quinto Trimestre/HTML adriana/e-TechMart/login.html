@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-TechMart</title>
+    <link rel="stylesheet" href="CSS/estilo.css">
+    
+</head>
+<body class="login">
+    <header>
+        <div class="header-content">
+            <a href="index.html"><img class="logo" src="IMG/logo.jpg" alt="logo"></a>
+            <h1>TMT</h1>
+            <ul>
+                <li><a class="buscar" href="buscar.html"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                  </svg></a></li>
+                  <li><a class="registro" href="registro.html">Registrate</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="contenido">
+        <form class=" form-basico" action="#" onsubmit="return validar();">
+        <div class="titulo">
+            <h3>Inicia Sesion</h3>
+        </div>
+
+        <form action="#" class="form-basico">
+
+            <div class="entrada">
+                <label>Correo</label>
+                <input type="email" class="form-control" required>
+                <div class="feedback">Ingresa un correo válido.</div>
+            </div>
+            <div class="entrada">
+                <label>Contraseña</label>
+                <input type="password" class="form-control" required>
+                <div class="feedback">Ingresa una contraseña válida.</div>
+            </div>
+            <div class="btnn">
+                <input class="btn" type="submit" value="enviar"
+                on click="validar()">
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validar() {          
+            
+                window.alert("Bienvenido!");
+                window.location.href = "index.html";
+            
+            return false; 
+        }
+    </script>
+
+</body>
+</html>

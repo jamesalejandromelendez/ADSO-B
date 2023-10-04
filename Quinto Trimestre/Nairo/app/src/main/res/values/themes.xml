@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Staysinc" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Staysinc" parent="Base.Theme.Staysinc" />
+
+    <style name="Theme.TechInn" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

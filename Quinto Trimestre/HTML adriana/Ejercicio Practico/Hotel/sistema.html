@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS\estilo_sistemas.css">
+    <link rel="icon" href="IMG\sistema\logo-sena-verde.png">
+    <title>Sistema</title>
+</head>
+<body>
+    <!-- menu -->
+    <header>
+        <a href="../index.html" onclick="seleccionar(this)">Block</a>
+        <a href="#intro" onclick="seleccionar(this)" class="selected">Inicio</a>
+        <a href="#servicios" onclick="seleccionar(this)">Servicios</a>
+        <span>
+            <i class="icono_menu"><img src="IMG\sistema\logo-sena-verde.png" alt=""></i>
+        </span>
+        <a href="#reservas" onclick="seleccionar(this)">Reservas</a>
+        <a href="#contactos" onclick="seleccionar(this)">Contactos</a>
+        <a href="#registro" onclick="seleccionar(this)">Registro</a>
+    </header>
+
+    <!-- secction de introduccion -->
+    <section id="intro" class="bloque">
+        <div class="contenido">
+            <div>
+                <h1>La mejor estancia de su viaje</h1>
+            </div>
+            <div class="formulario">
+                <form action="#servicios">
+                    <h2>Iniciar Sesion</h2>
+                    <div class="info">
+                        <label>Usuario</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="info">
+                        <label>Contraseña</label> 
+                        <input type="password" required>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar" class="btn_enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="bloque">
+        <div><h2 class="titulo">Nuestros Servicios</h2></div>
+
+        <div class="contenido">
+            <div class="item servicio1">
+                <div class="overlay"></div>
+                <a href="./paginas/servicios/pisinas.html"><h2>Pisinas</h2></a>
+            </div>
+            <div class="item servicio2">
+                <div class="overlay"></div>
+                <a href="./paginas/servicios/pisinas.html"><h2>Restaurantes</h2></a>
+            </div>
+            <div class="item servicio3">
+                <div class="overlay"></div>
+                <a href="./paginas/servicios/pisinas.html"><h2>Bar</h2></a>
+            </div>
+            <div class="item servicio4">
+                <div class="overlay"></div>
+                <a href="./paginas/servicios/pisinas.html"><h2>Spa</h2></a>
+            </div>
+            <div class="item servicio5">
+                <div class="overlay"></div>
+                <a href="./paginas/servicios/pisinas.html"><h2>Room Service</h2></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- section reservas -->
+    <section id="reservas" class="bloque">
+        <div class="contenido">
+            <div class="titulo">
+                <h2>¿Deseas reservar?</h2>
+            </div>
+            <div class="contenido">
+                <p> las presentes condiciones generales estan sujetas a lo dispuesto en la NTSH Sectorial Colombiana 003(2003-02-24)
+                    <br>
+                    esta forma tiene un objepto proporcionallos requisitos para ofrecer produntos y servicios dando respuesta al cliente, realizar check in y check out de huespedes y reservar habitaciones de acuerdo con procedimientos definidos en los establecimientos de halojamiento y hopedaje
+                </p>
+
+                <div class="item clausulas">
+                    <div class="overlay"></div>
+                    <a href="./paginas/reservas/clausulas.html"><h2>Clausulas</h2></a>
+                </div>
+                <div class="item Condiciones">
+                    <div class="overlay"></div>
+                    <a href="./paginas/reservas/condiciones.html"><h2>Condiciones de pago</h2></a>
+                </div>
+                <div class="item reservas">
+                    <div class="overlay"></div>
+                    <a href="./paginas/reservas/reservas.html"><h2>Reservas</h2></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- seccion de contactos -->
+    <section id="contactos" class="bloque">
+        <div class="contenido">
+            <div class="datos">
+
+                <div class="item">
+                    <div class="icon">
+                        <i class="fa-sharp fa-solid fa-location-dot"></i>
+                    </div>
+                    <div class="datos_dir">
+                        <h2>Direccion</h2>
+                        <h3> calle 13 # 10 - 93, soacha, cundinamarca</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="datos_tel">
+                        <h2>Telefono</h2>
+                        <h3>(+57)-601</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="datos_email">
+                        <h2>Email</h2>
+                        <h3>jamesalejandromelendez@hotmail.com</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="icon">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div class="datos_wass">
+                        <h2>whatsapp</h2>
+                        <h3>3052829469</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="formulario">
+                <form action="#intro">
+                    <h2>Enviar mensaje</h2>
+                    <div class="info">
+                        <label>Nombre</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="info">
+                        <label>Apellido</label>
+                        <input type="text">
+                    </div>
+                    <div class="info">
+                        <label>Email</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="info">
+                        <label>Mensaje</label>
+                        <textarea cols="30" rows="10" required></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar" class="btn_enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- seccion registrarse-->
+    <section id="registro" class="bloque">
+        <form action="#intro">
+            <div class="contenido">
+                <h2>Registrarse</h2>
+                <div class="info">
+                    <label>Nombre</label>
+                    <input type="text" required>
+                </div>
+                <div class="info">
+                    <label>Apellido</label>
+                    <input type="text" required>
+                </div>
+                <div class="info">
+                    <label>Email</label>
+                    <input type="email" required>
+                </div>
+                <div class="info">
+                    <label>Tipo de documento</label>
+                    <select>
+                        <option>Cedula de ciudania</option>
+                        <option>Cedula de extrangeria</option>
+                        <option>Pasaporte</option>
+                    </select>
+                </div>
+                <div class="info">
+                    <label>No° Documento</label>
+                    <input type="number" required>
+                </div>
+                <div class="info">
+                    <input type="checkbox" required>He leido <a href="https://www.youtube.com/watch?v=tTVFJfrPhlQ">terminos y condiciones</a>
+                </div>
+                <div>
+                    <input type="submit" value="Enviar" class="btn_enviar">
+                </div>
+             </div>
+        </form>
+    </section>
+
+</body>
+</html>

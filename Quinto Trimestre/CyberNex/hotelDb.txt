@@ -1,0 +1,239 @@
+/*CREATE DATABASE Hotel;*/
+
+-- Crear tabla tbTipoUsuario
+CREATE TABLE tbTipoUsuario (
+    tipUsuId INT PRIMARY KEY,
+    tipUsuRol VARCHAR(20)
+  );
+
+
+-- Crear tabla tbUsuarios
+CREATE TABLE tbUsuarios (
+    usuDocumento INT PRIMARY KEY,
+    usuNombre VARCHAR(50),
+    usuApellido VARCHAR(50),
+    usuEmail VARCHAR(50),
+    usuTelefono VARCHAR(15),
+    usuGenero VARCHAR(20),
+    usuContraseña VARCHAR(50),
+    usuEstado VARCHAR(20),
+    tipUsuId INT,
+    FOREIGN KEY (tipUsuId) REFERENCES tbTipoUsuario (tipUsuId)
+);
+
+
+CREATE TABLE tbTipoHabitacion (
+    tipHabId INT PRIMARY KEY,
+    tipHabTipo VARCHAR(20)
+);
+
+
+CREATE TABLE tbHabitacion (
+    habNumero INT PRIMARY KEY,
+    habEstado VARCHAR(20),
+    habCaracteristicas VARCHAR(200),
+    habCostoBase DECIMAL(10, 2),
+    habCapacidad INT,
+    habNroCamaSensilla INT,
+    habNroCamaDoble INT,
+    habNroCamarotes INT,
+    tipHabId INT,
+    FOREIGN KEY (tipHabId) REFERENCES tbTipoHabitacion (tipHabId)
+);
+
+-- Crear tabla tbTipoServicio
+  CREATE TABLE tbTipoServicio (
+    tipSerId INT PRIMARY KEY,
+    tipSerNombre VARCHAR(20)
+);
+
+
+-- Crear tabla tbServicios
+CREATE TABLE tbServicios (
+    serID INT PRIMARY KEY,
+    serNombre VARCHAR(50),
+    serDescripcion VARCHAR(100),
+    serCosto DECIMAL(10, 2),
+    tipSerId INT,
+    FOREIGN KEY (tipSerId) REFERENCES tbTipoServicio (tipSerId)
+);
+
+
+-- Crear tabla tbTipoProducto
+CREATE TABLE tbTipoProducto (
+    tipProId INT PRIMARY KEY,
+    tipProCategoria VARCHAR(20)
+);
+
+
+-- Crear tabla tbProductos
+  CREATE TABLE tbProductos (
+    proId INT PRIMARY KEY,
+    proNombre VARCHAR(50),
+    proCosto DECIMAL(10, 2),
+    tipProId INT,
+    FOREIGN KEY (tipProId) REFERENCES tbTipoProducto (tipProId)
+);
+
+-- Crear tabla tbReserva
+CREATE TABLE tbReserva (
+    resId INT PRIMARY KEY,
+    usuDocumento INT,
+    resEstado VARCHAR(20),
+    resCantidadAdultos INT,
+    resCantidadNiños INT,
+    resFechaIngreso DATE,
+    resFechaSalida DATE,
+    habNumero INT,
+    FOREIGN KEY (usuDocumento) REFERENCES tbUsuarios (usuDocumento),
+    FOREIGN KEY (habNumero) REFERENCES tbHabitacion (habNumero)
+);
+
+CREATE TABLE tbFactura (
+    facId INT PRIMARY KEY AUTO_INCREMENT,
+    facFecha DATE,
+    facTotal FLOAT
+);
+
+CREATE TABLE tbDetalleFactura (
+    detFacId INT PRIMARY KEY AUTO_INCREMENT,
+    facId INT,
+    resId INT,
+    serID INT,
+    detFacSubTotal FLOAT,
+    FOREIGN KEY (facId) REFERENCES tbFactura (facId),
+    FOREIGN KEY (resId) REFERENCES tbReserva (resId),
+    FOREIGN KEY (serId) REFERENCES tbServicios (serId)
+);
+
+--------------------------------------------------------------------------------
+
+-- Insertar datos en tbTipoUsuario
+INSERT INTO tbTipoUsuario VALUES
+(1, 'Admin'),
+(2, 'Recepcion'),
+(3, 'Cliente'),
+(4, 'Gerente'),
+(5, 'Seguridad');
+
+
+-- Insertar datos en tbUsuarios
+INSERT INTO tbUsuarios VALUES
+(2010234, 'Fabian', 'Lombardi', 'fl@.com', '3133248001', 'Masculino', 'fl013', 'Activo', 3),
+(2010235, 'Maria', 'Lopez', 'ml@.com', '3133248002', 'Femenino', 'ml023', 'Activo', 3),
+(2010236, 'Gabriele', 'Gomez', 'gg@.com', '3133248003', 'Masculino', 'gg033', 'Activo', 3),
+(2010237, 'Daniel', 'Mancini', 'dm@.com', '3133248004', 'Masculino', 'dm043', 'Inactivo', 3),
+(2010238, 'Laura', 'Ruiz', 'lr@.com', '3133248005', 'Femenino', 'lr052', 'Activo', 2),
+(2010239, 'Valentina', 'Martinez', 'vm@.com', '3133248006', 'Masculino', 'vm062', 'Inactivo', 2),
+(2010240, 'Pedro', 'Acosta', 'pa@.com', '3133248007', 'Femenino', 'pa071', 'Activo', 1);
+
+
+INSERT INTO tbTipoHabitacion VALUES
+(1, 'Individual'),
+(2, 'Doble'),
+(3, 'Triple'),
+(4, 'Quad');
+
+
+INSERT INTO tbHabitacion VALUES
+(1, 'Disponible', 'Habitacion con una cama sencilla', 120000.00, 1, 1, 0, 0, 1),
+(2, 'Ocupado', 'Habitacion con una cama sencilla',  120000.00, 1, 1, 0, 0, 1),
+(3, 'Disponible', 'Habitacion con dos camas sencillas', 250000.00, 2, 2, 0, 0, 2),
+(4, 'Disponible', 'Habitacion con una cama doble', 250000.00, 2, 0, 2, 0, 2),
+(5, 'Disponible', 'Habitacion con una cama sencilla y dos camas dobles', 350000.00, 3, 1, 2, 0, 3),
+(6, 'Ocupado', 'Habitacion con una cama sencilla y un camarote', 350000.00, 3, 1, 0, 1, 3),
+(7, 'Disponible', 'Habitacion con dos camas sencillas y una cama doble', 500000.00, 4, 2, 1, 0, 4),
+(8, 'Disponible', 'Habitacion con dos camarotes', 500000.00, 4, 0, 0, 2, 4);
+
+
+-- Insertar datos en tbTipoServicio
+INSERT INTO tbTipoServicio VALUES
+(1, 'Alimentacion'),
+(2, 'Bienestar'),
+(3, 'Transporte'),
+(4, 'Entretenimiento'),
+(5, 'Transporte privado');
+
+
+-- Insertar datos en tbServicios
+INSERT INTO tbServicios VALUES
+(1, 'Desayuno Buffet', 'Delicioso desayuno tipo buffet', 10000.00, 1),
+(2, 'Masaje Relajante', 'Masaje relajante de cuerpo completo', 20000.00, 2),
+(3, 'Transporte al Aeropuerto', 'Traslado en vehiculo privado al aeropuerto', 30000.00, 3),
+(4, 'Acceso al Spa', 'Acceso a todas las instalaciones del spa', 25000.00, 2),
+(5, 'Servicio de Habitacion', 'Entrega de comida y bebida en la habitacion', 15000.00, 1);
+
+
+-- Insertar datos en tbTipoProducto
+INSERT INTO tbTipoProducto VALUES
+(1, 'Bebidas'),
+(2, 'Comestibles'),
+(3, 'Dulces'),
+(4, 'Bebidas'),
+(5, 'Comestibles');
+
+
+-- Insertar datos en tbProductos
+INSERT INTO tbProductos VALUES
+(1, 'ColaCoca', 3000.00, 1),
+(2, 'Tamal', 8000.00, 2),
+(3, 'Quipitos', 1500.00, 3),
+(4, 'Agua mineral', 2000.00, 1),
+(5, 'Galletas', 5000.00, 2);
+
+
+-- Insertar datos en tbReserva
+INSERT INTO tbReserva VALUES
+(10011, 2010234, 'Anulada', 1, 1, '2024-03-11', '2025-03-22', 1),
+(10012, 2010235, 'Aprovada', 2, 0, '2024-03-12', '2025-03-21', 2),
+(10013, 2010236, 'Anulada', 3, 0, '2024-03-13', '2025-03-23', 3),
+(10014, 2010237, 'Aprovada', 2, 2, '2024-03-14', '2025-03-24', 4),
+(10015, 2010238, 'Pendiente', 2, 0, '2024-03-15', '2025-03-25', 5);
+
+
+INSERT INTO tbFactura (facFecha) VALUES
+('2023-05-21'),
+('2023-05-22'),
+('2023-05-23'),
+('2023-05-24');
+
+INSERT INTO tbDetalleFactura VALUES
+(NULL,1,10011,1,NULL),
+(NULL,2,10012,2,NULL),
+(NULL,3,10013,3,NULL),
+(NULL,4,10014,4,NULL);
+
+
+-----------------------------------------------------------------------------
+-- Todo esto es aparte
+
+CREATE TABLE tbFactura (
+    facId INT PRIMARY KEY AUTO_INCREMENT,
+    facFecha DATE,
+    usuDocumento INT,
+    facTotal FLOAT,
+    FOREIGN KEY (usuDocumento) REFERENCES tbUsuarios (usuDocumento)
+);
+
+CREATE TABLE tbDetalleFactura (
+    detFacId INT PRIMARY KEY AUTO_INCREMENT,
+    facId INT,
+    proId INT,
+    detFacCantidad INT,
+    detFacSubTotal FLOAT,
+    FOREIGN KEY (facId) REFERENCES tbFactura (facId),
+    FOREIGN KEY (proId) REFERENCES tbProductos (proId)
+);
+
+-------------------------------------------------------
+INSERT INTO tbFactura (facFecha,usuDocumento) VALUES
+('2023-05-21',2010234),
+('2023-05-22',2010235),
+('2023-05-23',2010236),
+('2023-05-24',2010237);
+
+INSERT INTO tbDetalleFactura VALUES
+(NULL,1,1,2,NULL),
+(NULL,1,2,1,NULL),
+(NULL,2,3,3,NULL),
+(NULL,2,4,2,NULL);

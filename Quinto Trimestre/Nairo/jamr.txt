@@ -1,0 +1,105 @@
+package PruevaSumas;
+
+import java.util.Scanner;
+
+public class PruevaSumas {
+
+    public static void main(String[] args) {
+        // TODO code application logic here
+        char operacion = 's';
+        int numero1 = 0;
+        int numero2 = 0;
+        int resultado = 0;
+
+        Scanner miteclado = new Scanner(System.in);
+
+         System.out.println("Qué operación desea realizar?\n+ = Suma\n- = Resta\n* = Multiplicación\n/ = División");
+        
+        System.out.println("Señor usuario, digite el primer número para suma:");
+        numero1 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero1);       
+        System.out.println("Señor usuario, digite el segundo número para suma:");
+        numero2 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);        
+        resultado=numero1+numero2;
+        System.out.println("su resultado es "+resultado);
+        
+        
+        System.out.println("Señor usuario, digite el primer número para resta:");
+        numero1 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);       
+        System.out.println("Señor usuario, digite el segundo número para resta:");
+        numero2 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);       
+        resultado=numero1-numero2;
+        System.out.println("su resultado es "+resultado);
+        
+        
+        System.out.println("Señor usuario, digite el primer número para multiplicar:");
+        numero1 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);       
+        System.out.println("Señor usuario, digite el segundo número para multiplicar:");
+        numero2 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);      
+        resultado=numero1*numero2;
+        System.out.println("su resultado es "+resultado);
+        
+        
+        System.out.println("Señor usuario, digite el primer número para dividir:");
+        numero1 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);       
+        System.out.println("Señor usuario, digite el segundo número para dividir:");
+        numero2 = miteclado.nextInt();
+        //System.out.println("Usted digitó el número " + numero2);      
+        resultado=numero1/numero2;
+        System.out.println("su resultado es "+resultado);
+    }
+    
+}
+
+
+-----------------------------------------------------------------------------------------------
+package triangulo;
+
+import java.util.Scanner;
+
+public class triangulo {
+
+    public static void main(String[] args) {
+        int altura = 0;
+        int base = 0;
+        int resultado = 0;
+        
+        Scanner s = new Scanner(System.in);
+        
+        System.out.println("digita la altura del triangulo");
+        altura = s.nextInt();
+        
+        System.out.println("digita la base del triangulo");
+        base = s.nextInt();
+        
+        resultado = base*altura/2;
+        System.out.println("su resultado es "+resultado);
+    }
+}
+
+-------------------------------------------------------------------------------------------------
+package moneda;
+
+import java.util.Scanner;
+
+public class moneda {
+
+    public static void main(String[] args) {
+        double tasaCambio = 0.00027;
+        double pesosColombianos = 0.0;
+        double dolares = 0.0;
+        
+        Scanner s = new Scanner(System.in);
+        System.out.print("Ingrese la cantidad de pesos colombianos: ");
+        pesosColombianos = s.nextDouble();
+        dolares = pesosColombianos * tasaCambio;
+
+        System.out.println("La cantidad en dólares es: $" + dolares);
+    }
+}

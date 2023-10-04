@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrada</title>
+    <link rel="stylesheet" href="CSS/estilo_entrada.css">
+    <link rel="icon" href="img/formulario.png">
+    <script>
+        function enviar(){
+            alert("Tus datos se estan enviando");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img  class="logo" src="IMG/logo.avif" alt="logo"></a>
+        <h1>Entradas Basicas</h1>
+    </header>
+
+    <div class="contenido">
+        <form class=" form-basico"
+        action="#">
+        <div class="titulo">
+            <h2>Input Basico</h2>
+        </div>
+
+        <!-- contenedor formulario -->
+        <form action="#" class="form-basico">
+
+        <!-- contenedor del contenido -->
+        <div class="entrada">
+            <label>Tipo texto</label>
+            <input type="text" placeholder="Nombre Completo">
+        </div>
+        <div class="entrada">
+            <label>Tipo fecha</label>
+            <input type="date" placeholder="Fecha">
+        </div>
+        <div class="entrada">
+            <label>Tipo correo</label>
+            <input type="text" placeholder="Ejemplo@gmail.com">
+        </div>
+        <div class="entrada">
+            <label>Tipo contraseña</label>
+            <input type="password" placeholder="Ejemplo1234*">
+        </div>
+        <div class="entrada">
+            <label>Tipo texto largo</label>
+            <textarea class="textarea"></textarea>
+        </div>
+        <div class="entrada">
+            <label>Tipo lista desplegable</label>
+            <select name="select">
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+            </select>
+        </div>
+        <div class="entrada">
+            <label>Tipo caja de verificacion</label> 
+            <input type="checkbox">          
+        
+            <div class="opciones">
+                <input type="radio">
+                <option name="">Opcion1</option>           
+            </div>
+            <div class="opciones">
+                <input type="radio">
+                <option name="">Opcion2</option>           
+            </div>
+            <div class="opciones">
+                <input type="radio">
+                <option name="">Opcion3</option>           
+            </div>
+        </div>
+        <div class="btnn">
+            <input class="btn" type="button" value="enviar"
+            on click="enviar()">
+        </div>
+    </form>
+</div>
+
+    
+    <div class="menu">
+        <ul>
+            <li><a href="entrada.html">Entrada</a></li>
+            <li><a href="registro.html">Registro</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="buscar.html">Buscar</a></li>
+            <li><a href="validar.html">Validar</a></li>
+        </ul>
+      </div>
+
+</body>
+</html>

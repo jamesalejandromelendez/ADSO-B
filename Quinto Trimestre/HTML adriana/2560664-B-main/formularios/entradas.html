@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script>
+        function enviar(){
+            alert("tus datos se estan enviando......")
+        }
+    </script>
+</head>
+<body>
+    <!--encabezado-->
+    <header>
+        <img class="logo" src="img/logo.png" alt="logo">
+        <h1>FORMULARIOS</h1>
+    </header>
+    <!--contenedor del contenido-->
+    <div class="contenido">
+        <!--contenedor del titulo del form-->
+        <div class="formulario">
+       <div class="titulo">
+        <h2>Input basicos</h2>
+       </div>
+       <!--contenedor del formulario-->
+       <form action="#" class="form-basico">
+        <!--contenedor del contenido-->
+        <div class="entrada">
+            <label>Tipo texto</label>
+            <input type="text">
+        </div>
+        <div class="entrada">
+            <label>Tipo fecha</label>
+            <input type="date">
+        </div>
+        <div class="entrada">
+            <label>Tipo correo</label>
+            <input type="email">
+        </div>
+        <div class="entrada">
+            <label>Tipo contraseña</label>
+            <input type="password">
+        </div>
+        <div class="entrada">
+            <label>Tipo texto largo</label>
+            <textarea class="textarea"></textarea>
+            
+        </div>
+        <div class="entrada">
+            <label>Tipo lista desplegable</label>
+            <select name="select">
+                <option>opcion 1</option>
+                <option>opcion 2</option>
+                <option>opcion 3</option>
+            </select>
+        </div>
+        <div class="entrada">
+            <label>Tipo caja de verificacion</label>
+            <input type="checkbox">
+        </div>
+
+    <div class="entrada">
+            <label>Tipo selecion multiple unica respuesta</label>
+            
+            <div class="opciones">
+                <input type="radio">
+                <option name="">opcion 1</option>
+            </div>
+            <div class="opciones">
+                <input type="radio">
+                <option name="">
+                    <span>opcion 2</span></option>       
+            </div>
+            <div class="opciones">
+                <input type="radio">
+                <option name="">opcion 3</option>
+            </div>
+        </div>
+        <div class="entrada">
+            <input type="button" value="Enviar" onclick="enviar()">
+        </div>
+       </form>
+    </div>
+    </div>
+    <!--contenedor del menu de navegacion-->
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="entradas.html" class="activo">Form Entradas</a></li>
+            <li><a href="registro.html">Form Registro</a></li>
+            <li><a href="login.html">Form Login</a></li>
+            <li><a href="buscar.html">Form Buscar</a></li>
+            <li><a href="validar.html">Form Vaidacion</a></li>
+        </ul>
+    </div>
+</body>
+</html>
