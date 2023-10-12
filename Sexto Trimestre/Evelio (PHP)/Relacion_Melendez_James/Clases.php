@@ -23,47 +23,52 @@ class Aprendiz{
     public function verContador(){
         echo '<br>'.'Conteo: ' . self::$contador;
     }
+
+    public function obtenerNombres() {
+        return $this->nombres;
+    }
+
+    public function obtenerApellidos() {
+        return $this->apellidos;
+    }
 }
 
 // 2. Ficha
 // Atributos
 // -string codigoFicha, 
 // -array aprendices
-class Ficha{
+class Ficha {
     protected $codigoFicha;
     protected $aprendices;
-    // public static $contador = 0;
 
-    public function __construct($codigoFicha, $aprendices) {
+    public function __construct($codigoFicha, $aprendices = []) {
         $this->codigoFicha = $codigoFicha;
         $this->aprendices = $aprendices;
-        // Empleado::$contador+=1;
     }
 
     public function agregarAprendiz(Aprendiz $aprendiz) {
         $this->aprendices[] = $aprendiz;
     }
- 
-    public function verContador(){
-        echo '<br>'.'Conteo: ' . self::$contador;
+
+    public function verAprendices() {
+        return $this->aprendices;
     }
 }
-
 // 3. Programa
 // Atributos:
 // -codigoPrograma,
 // -nombrePrograma
-class Programa{
+class Programa {
     protected $codigoPrograma;
     protected $nombrePrograma;
     // public static $contador = 0;
 
     public function __construct($codigoPrograma, $nombrePrograma) {
-        $this->codigoPrograma = $codigoFicha;
+        $this->codigoPrograma = $codigoPrograma; // Corregir el nombre de la variable
         $this->nombrePrograma = $nombrePrograma;
         // Empleado::$contador+=1;
     }
- 
+
     public function verContador(){
         echo '<br>'.'Conteo: ' . self::$contador;
     }

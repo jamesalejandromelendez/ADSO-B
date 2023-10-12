@@ -23,28 +23,44 @@ $Aprendiz14 = new Aprendiz('1037428463', 'Camilo', 'Williams', 'Camilo@gmail.com
 $Aprendiz15 = new Aprendiz('52878123', 'Ana', 'Davis', 'Ana@gmail.com');
 
 // FICHA
-$ficha1 = new Ficha('2560664B', '');
-$ficha1->agregarAprendiz($aprendiz1);
-$ficha1->agregarAprendiz($aprendiz2);
-$ficha1->agregarAprendiz($aprendiz3);
-$ficha1->agregarAprendiz($aprendiz4);
-$ficha1->agregarAprendiz($aprendiz5);
+$ficha1 = new Ficha('2560664B', []);
+$ficha1->agregarAprendiz($Aprendiz1);
+$ficha1->agregarAprendiz($Aprendiz2);
+$ficha1->agregarAprendiz($Aprendiz3);
+$ficha1->agregarAprendiz($Aprendiz4);
+$ficha1->agregarAprendiz($Aprendiz5);
 
-$ficha2 = new Ficha('2560664A', '');
-$ficha1->agregarAprendiz($aprendiz6);
-$ficha1->agregarAprendiz($aprendiz7);
-$ficha1->agregarAprendiz($aprendiz8);
-$ficha1->agregarAprendiz($aprendiz9);
-$ficha1->agregarAprendiz($aprendiz10);
+$ficha2 = new Ficha('2560664A', []);
+$ficha2->agregarAprendiz($Aprendiz6);
+$ficha2->agregarAprendiz($Aprendiz7);
+$ficha2->agregarAprendiz($Aprendiz8);
+$ficha2->agregarAprendiz($Aprendiz9);
+$ficha2->agregarAprendiz($Aprendiz10);
 
-$ficha3 = new Ficha('2560665B', '');
-$ficha1->agregarAprendiz($aprendiz11);
-$ficha1->agregarAprendiz($aprendiz12);
-$ficha1->agregarAprendiz($aprendiz13);
-$ficha1->agregarAprendiz($aprendiz14);
-$ficha1->agregarAprendiz($aprendiz15);
+$ficha3 = new Ficha('2560665B', []);
+$ficha3->agregarAprendiz($Aprendiz11);
+$ficha3->agregarAprendiz($Aprendiz12);
+$ficha3->agregarAprendiz($Aprendiz13);
+$ficha3->agregarAprendiz($Aprendiz14);
+$ficha3->agregarAprendiz($Aprendiz15);
 
+// ver listado de las fichas
+$aprendicesEnFicha1 = $ficha1->verAprendices();
+$aprendicesEnFicha2 = $ficha2->verAprendices();
+$aprendicesEnFicha3 = $ficha3->verAprendices();
 
+echo "<h2>Aprendices en la ficha 2560664B:</h2> <br>";
+foreach ($aprendicesEnFicha1 as $aprendiz) {
+    echo $aprendiz->obtenerNombres() . ' ' . $aprendiz->obtenerApellidos() . '<br>';
+}
+echo "<h2>Aprendices en la ficha 2560664A:</h2> <br>";
+foreach ($aprendicesEnFicha2 as $aprendiz) {
+    echo $aprendiz->obtenerNombres() . ' ' . $aprendiz->obtenerApellidos() . '<br>';
+}
+echo "<h2>Aprendices en la ficha 2560665B:</h2> <br>";
+foreach ($aprendicesEnFicha3 as $aprendiz) {
+    echo $aprendiz->obtenerNombres() . ' ' . $aprendiz->obtenerApellidos() . '<br>';
+}
 
 //PROGRAMA
 $progama1 = new Programa('218120', 'ADSO');
