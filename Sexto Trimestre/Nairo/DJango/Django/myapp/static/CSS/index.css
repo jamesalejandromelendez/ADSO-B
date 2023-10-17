@@ -1,0 +1,442 @@
+* {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    overflow: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.bloque{
+    width: 100vw;
+    padding-top: 50px;
+    flex-shrink: 0;
+    height: 100vh;
+}
+
+header{
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+    max-width: 100%;
+    background: linear-gradient( to right, rgb(9, 128, 0),rgb(26, 91, 7),rgb(9, 128, 0));
+    text-align: center;
+}
+
+header a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: bisque;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 150%;
+}
+
+header a:hover{
+    color: rgb(255, 255, 255);
+}
+
+header span{
+    display: inline-block;
+    height: 55px;
+    width: 55px;
+    line-height: 40px;
+    border: 3px solid white;
+    border-radius: 45%;
+    padding: 4px;
+}
+
+.icono_menu img {
+    width: 40px;
+    height: 40px;
+}
+
+.selected {
+    color: azure;
+    transition: .2s;
+}
+
+.btn_enviar {
+    background-color: #0d4371;
+    display: inline-block;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: bold;
+    width: 200px;
+}
+
+.btn_enviar:hover {
+    background-color: #1168b4;;
+}
+
+/* INICIO */
+
+#intro {
+    background-image: url(../IMG/sistema/Tenquendama.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+#intro .contenido h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-shadow: 3px 3px 10px rgb(61, 66, 66);
+    position: relative;
+    animation: 3s aparecer forwards;
+    padding-bottom: 80px;
+}
+
+#intro .contenido h2 {
+    font-size: 4rem;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 3px 3px 10px #000000;
+    position: relative;
+    animation: 3s aparecer forwards;
+    padding-bottom: 70px;
+}
+@keyframes aparecer {
+   0% {
+       opacity: 0;
+       top: 50px;
+   }
+
+   100% {
+       opacity: 1;
+       top: 0px;
+   }
+}
+
+/* formulario */
+
+#intro .formulario {
+    background-color: #dfe4dacb;
+    max-width: 40%;
+    max-width: 670px;
+    height: 410px;
+    color: #211f1f;
+   margin-bottom: 80px;
+   border-radius: 7px;
+    margin-left: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    padding: 0px 0px 0px 30px;
+    text-align: center;
+}
+
+.formulario h3 {
+    color: #2d2567;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.info label {
+    display: block;
+    color: #2d2567;
+    font-weight: bold;
+}
+
+.formulario .info {
+    margin-bottom: 30px;
+    width: 600px;
+}
+
+.info input {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #000000;
+    outline: none;
+    background-color: #dadfe4;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulario .btn_enviar:hover{
+    background-color: #10528d;
+}
+
+ /*---------------
+SERVICIOS
+------------------
+*/
+
+#servicios {
+    background: linear-gradient(transparent, rgb(35, 35, 35)), url(../IMG/sistema/Servicios.jpg);
+    background-size: cover;
+}
+
+#servicios .titulo{
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 30px; /* Espaciado inferior */
+    font-size: 50px;
+}
+
+#servicios h2{
+    text-align: center;
+    color: #ffffff;
+}
+#servicios .contenido {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#servicios .servicio1 {
+    background-image: linear-gradient(rgba(35, 35, 35, 0.678), transparent), url(https://images.pexels.com/photos/9119784/pexels-photo-9119784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(../IMG/sistema/S_pisinas.jpg); */
+}
+
+#servicios .servicio2 {
+    background-image: linear-gradient(rgba(35, 35, 35, 0.76), transparent), url(https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(../IMG/sistema/S_restaurantes.jpg); */
+}
+
+#servicios  .servicio3 {
+    background-image: linear-gradient(rgba(35, 35, 35, 0.76), transparent), url(https://images.pexels.com/photos/3407779/pexels-photo-3407779.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(../IMG/sistema/S_bar.jpg); */
+}
+
+#servicios .servicio4 {
+    background-image: linear-gradient(rgba(35, 35, 35, 0.74), transparent), url(https://images.pexels.com/photos/3101547/pexels-photo-3101547.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    /* background-image: url(../IMG/sistema/S_spa.jpg); */
+}
+
+#servicios  .servicio5 {
+    background-image: linear-gradient(rgba(18, 18, 18, 0.735), transparent), url(https://images.pexels.com/photos/271672/pexels-photo-271672.jpeg)
+    /* background-image: url(../IMG/sistema/S_Room\ Service.jpg) */
+}
+
+#servicios .item {
+    width: 25%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    margin: 0 10px;
+    transition: .5s;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#servicios .item:hover {
+    width: 90%;
+    filter: brightness(1.2);
+}
+.bloque h2,
+.item.servicio1 a,
+.item.servicio2 a,
+.item.servicio3 a,
+.item.servicio4 a,
+.item.servicio5 a {
+    color: #ffffffe2;
+    text-decoration: none;
+}
+
+ /*---------------
+RESEVAS 
+------------------
+*/
+
+#reservas {
+    background: url(../IMG/sistema/reservas.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+#reservas .contenido {
+    border-radius: 10px;
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 30px; 
+    margin: 60px auto 0 auto;
+    align-items: center;
+}
+
+#reservas .contenido p{
+    padding: 10px;
+}
+
+#reservas .item {
+    width: 40%;
+    background: #056b0a; 
+    padding: 20px;
+    border-radius: 5px; 
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.359); 
+}
+
+#reservas .item a {
+    text-decoration: none;
+    color: #10528d; 
+}
+
+#reservas .item:hover {
+    transform: scale(1.05);
+    transition: .3s;    
+}
+
+#reservas .item {
+    margin: 0 10px 20px 10px; 
+}
+
+#reservas .titulo h2{
+    font-size: 50px;
+}
+
+ /*---------------
+CONTACTOS
+------------------
+*/
+
+#contactos {
+    background: url(https://images.pexels.com/photos/10670680/pexels-photo-10670680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    padding: 60px 0;
+    text-align: center;
+    color: #1a1a1a;
+}
+
+#contactos .contenido {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#contactos .datos {
+    width: 38%;
+    padding: 0px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#contactos .item {
+    display: flex;
+    align-items: center;
+}
+
+#contactos .item .icon {
+    font-size: 30px;
+}
+
+#contactos .formulario {
+    width: 38%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#contactos .formulario .info {
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    text-align: center;
+}
+
+#contactos .formulario h2 {
+    color: #000000;
+    font-size: 40px;
+}
+
+#contactos .info input[type="text"],
+#contactos .info input[type="email"],
+#contactos .info textarea {
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #929292;
+    border-radius: 5px;
+}
+
+ /*---------------
+REGISTRO
+------------------
+*/
+
+/* Estilos para la sección de registro */
+#registro {
+    background: linear-gradient(transparent, black), url(https://images.pexels.com/photos/2373201/pexels-photo-2373201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1 );
+    background-size: cover;
+    padding: 50px 0; /* Agrega espacio alrededor del contenido */
+    text-align: center;
+    background-position: center;
+    color: #333; /* Cambia el color del texto a un tono más oscuro */
+}
+
+#registro .contenido {
+    max-width: 30%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.897); ;
+    border-radius: 7px; /* Agrega bordes redondeados */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
+    padding: 30px;
+    text-align: center;
+}
+
+#registro h2 {
+    color: #000000; 
+    margin-bottom: 30px; /* Espaciado inferior */
+    font-size: 50px;
+}
+
+#registro .info {
+    margin-bottom: 15px; /* Espaciado inferior entre elementos */
+}
+
+#registro input[type="text"],
+#registro input[type="email"],
+#registro input[type="password"],
+#registro input[type="number"],
+#registro select,
+#registro option,
+#registro textarea {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    padding: 10px;
+    margin-bottom: 15px; /* Espaciado inferior entre campos de entrada */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#registro .info a{
+    text-decoration: none;  
+    color: inherit; 
+}
+
+#registro .info a:hover{
+    font-size: 20px;
+    color: #10528d;
+}
+
+#registro input[type="sumit"] {
+    margin-right: 5px; 
+}
+
+/* @media screen and (-webkit-min-device-pixel-ratio:0){
+    @font-face{
+        font-family:fantasy;
+    }
+} */
