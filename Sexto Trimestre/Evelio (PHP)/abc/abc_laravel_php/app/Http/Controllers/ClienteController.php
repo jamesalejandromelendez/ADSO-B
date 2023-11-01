@@ -24,7 +24,6 @@ class ClienteController extends Controller
         $cliente->apellido = $request->input('apellido');
         $cliente->correo_electronico = $request->input('correo_electronico');
         $cliente->telefono = $request->input('telefono');
-        $cliente->save();
 
         try {
             $cliente->save();
