@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <title>Principal</title>
+    <title>Registrar Usuario</title>
 </head>
 <body>
     <div class='container w-25 border p-4 mt-4'>
@@ -42,8 +42,10 @@
                 <label for="telefono" class='form-label'>Teléfono</label>
                 <input type="text" name='telefono' class='form-control' required>
             </div>
-                <button type='submit' class='btn btn-primary' required>Crear usuario</button>
+                <button type='submit' class='btn btn-primary'>Crear usuario</button>
+                <a href="{{ route('eliminar') }}" class='btn btn-danger'>Eliminar usuario</a>
         </form>
+
     </div>
 </body>
 </html>

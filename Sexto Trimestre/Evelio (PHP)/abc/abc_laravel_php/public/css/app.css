@@ -53,6 +53,16 @@ body {
     border-color: #007bff;
 }
 
+.btn-danger {
+    background-color: #dd0303;
+    border-color: #990101;
+}
+
+.btn-danger:hover {
+    background-color: #8b0303;
+    border-color: #860202;
+}
+
 .btn-primary:hover {
     background-color: #0056b3;
     border-color: #003f82;

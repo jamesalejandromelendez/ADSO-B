@@ -14,12 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [ClienteController::class, 'get_ususario'])->name('ususarios');
 
-Route::get('/home', function () {
-    return view('index');
-});
+Route::get('/home', function () {return view('index');})->name('Registrar');
+
+Route::get('/eliminar', function () {return view('Eliminar_usuario');})->name('eliminar');
 
 Route::post('/cliente', [ClienteController::class, 'storeCliente'])->name('clientes');
+
+Route::delete('/eliminar', [ClienteController::class, 'destroyCliente'])->name('clientes.destroy');
+
+
