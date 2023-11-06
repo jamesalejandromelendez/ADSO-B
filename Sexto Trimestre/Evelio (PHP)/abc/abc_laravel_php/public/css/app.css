@@ -32,6 +32,34 @@ body {
     border-radius: 0.25rem;
 }
 
+a{
+    text-decoration: none;
+    text-align: center;
+    font-weight: 400;
+    display: inline-block;
+    padding: 1% 2%;
+    border-radius: 0.30rem;
+    color: #ffffff;
+}
+
+a.eliminar{
+    background-color: #be2600;
+    border: 1px solid #be2600;
+}
+a.editar{
+    background-color: #f0c000;
+    border: 1px solid #f0c000;
+}
+
+a.eliminar:hover{
+    background-color: #921d00;
+    border: 1px solid #921d00;
+}
+a.editar:hover{
+    background-color: #b99504;
+    border: 1px solid #b99504;
+}
+
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -52,6 +80,10 @@ body {
     background-color: #007bff;
     border-color: #007bff;
 }
+.btn-update {
+    background-color: #cebe30;
+    border-color: #cebe30;
+}
 
 .btn-danger {
     background-color: #dd0303;
@@ -61,6 +93,10 @@ body {
 .btn-danger:hover {
     background-color: #8b0303;
     border-color: #860202;
+}
+.btn-update:hover {
+    background-color: #b1a32b;
+    border-color: #b1a32b;
 }
 
 .btn-primary:hover {

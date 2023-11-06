@@ -10,13 +10,15 @@
 <body>
     <div class='container w-25 border p-4 mt-4'>
         <h1>Usuarios</h1>
-        @foreach($clientes as $cliente) 
 
-        <p class='clientes'>{{ $cliente->nombre }} {{ $cliente->apellido }} - {{ $cliente->correo_electronico }} - {{ $cliente->telefono }}</p>
-
+        @foreach ($clientes as $cliente)
+            <p>{{ $cliente->nombre }} {{ $cliente->apellido }} - 
+                <a href="{{ route('clientes.editar', ['id' => $cliente->id]) }}" class='editar'>Editar</a> - <a href="{{ route('eliminar', ['id' => $cliente->id]) }}" class='eliminar'>Eliminar</a>
+            </p>
         @endforeach
-        <a href="{{ route('eliminar') }}" class='btn btn-danger'>Eliminar usuario</a>
-        <a href="{{ route('Registrar') }}" class='btn btn-primary'>Crear usuario</a>
+
+        <a href="{{ route('Registrar') }}" class='btn btn-primary'>Crear</a>
+
     </div>
 </body>
 </html>

@@ -43,7 +43,7 @@
                 <input type="text" name='telefono' class='form-control' required>
             </div>
                 <button type='submit' class='btn btn-primary'>Crear usuario</button>
-                <a href="{{ route('eliminar') }}" class='btn btn-danger'>Eliminar usuario</a>
+                <a href="{{ route('usuarios') }}" class='btn btn-update'>usuarios</a>
         </form>
 
     </div>
