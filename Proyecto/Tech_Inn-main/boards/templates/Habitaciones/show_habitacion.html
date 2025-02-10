@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}HABITACIONES{% endblock title %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_habitacion" class="btn btn-1">Agregar habitación</a></span>
+            <span><a href="/crud_tipohabitacion" class="btn btn-2">Tipo habitación</a></span>
+        </div>
+        <h3>GESTIONAR HABITACIONES</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>Numero</th>
+            <th>Habitación</th>
+            <th>Características</th>
+            <th>Precio</th>
+            <th>Capacidad</th>
+            <th>Camas sencillas</th>
+            <th>Camas dobles</th>
+            <th>Camarotes</th>
+            <th>Tipo</th>
+            <th>Imagen</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        {% for habitacion in habitacion %}
+            <tr>
+                <td>{{ habitacion.numero }}</td>
+                <td>{{ habitacion.estado }}</td>
+                <td>{{ habitacion.caracteristicas }}</td>
+                <td>{{ habitacion.costo_base }}</td>
+                <td>{{ habitacion.capacidad }}</td>
+                <td>{{ habitacion.nro_cama_sencilla }}</td>
+                <td>{{ habitacion.nro_cama_doble }}</td>
+                <td>{{ habitacion.nro_camarotes }}</td>
+                <td>{{ habitacion.tipo }}</td>
+                <td>
+                    {% if habitacion.imagen %}
+                        <img src="{{ habitacion.imagen.url }}" alt="Imagen de la habitación" class="foto-perfil">
+                    {% else %}
+                        No disponible
+                    {% endif %}
+                </td>
+                <td><a href="/edit_habitacion/{{ habitacion.numero }}" class="btn">Editar</a></td>
+                <td><a href="/delete_habitacion/{{ habitacion.numero }}" class="btn btn-red">Borrar</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for habitacion in habitacion %}
+                <div class="columna">
+                    <div class="header">Numero</div>
+                    <div class="contenido">{{ habitacion.numero }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Habitación</div>
+                    <div class="contenido">{{ habitacion.estado }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Características</div>
+                    <div class="contenido">{{ habitacion.caracteristicas }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Precio</div>
+                    <div class="contenido">{{ habitacion.costo_base }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Capacidad</div>
+                    <div class="contenido">{{ habitacion.capacidad }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nro_cama_sencilla</div>
+                    <div class="contenido">{{ habitacion.nro_cama_sencilla }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nro_cama_doble</div>
+                    <div class="contenido">{{ habitacion.nro_cama_doble }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Nro_camarotes</div>
+                    <div class="contenido">{{ habitacion.nro_camarotes }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Tipo</div>
+                    <div class="contenido">{{ habitacion.tipo }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Imagen</div>
+                    <div class="contenido">
+                        {% if habitacion.imagen %}
+                            <img src="{{ habitacion.imagen.url }}" alt="Imagen de la habitación" class="foto-perfil">
+                        {% else %}
+                            No disponible
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="columna">
+                    <div class="header">Editar</div>
+                    <div class="contenido"><a href="/edit_habitacion/{{ habitacion.numero }}" class="btn">Editar</a></div>
+                </div>
+                <div class="columna">
+                    <div class="header">Borrar</div>
+                    <div class="contenido"><a href="/delete_habitacion/{{ habitacion.numero }}" class="btn btn-red btn-ultimo">Borrar</a></div>
+                </div>
+                <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

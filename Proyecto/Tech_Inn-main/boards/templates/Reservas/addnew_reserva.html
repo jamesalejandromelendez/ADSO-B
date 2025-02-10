@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}AGREGAR RESERVA{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}<li>{{ message }}</li>{% endfor %}
+            </ul>
+        {% endif %}
+        <form method="POST" class="post-form" action="/addnew_reserva/">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Ingresar datos de la reserva</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="id_documento" class="form-label">Documento:</label>
+                    <select name="documento" class="form-control" id="id_documento">
+                        {% for usuario in usuarios %}
+                            <option value="{{ usuario.documento }}">{{ usuario.documento }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="id_estado" class="form-label">Estado:</label>
+                    <select name="estado" class="form-control" id="id_estado">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Completada">Completada</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="id_cantidad_adultos" class="form-label">Cantidad de Adultos:</label>
+                    <input type="number" name="cantidad_adultos" class="form-control" id="id_cantidad_adultos">
+                </div>
+                <div class="mb-3">
+                    <label for="id_cantidad_niños" class="form-label">Cantidad de Niños:</label>
+                    <input type="number" name="cantidad_niños" class="form-control" id="id_cantidad_niños">
+                </div>
+                <div class="mb-3">
+                    <label for="id_fecha_ingreso" class="form-label">Fecha de Ingreso:</label>
+                    <input type="date" name="fecha_ingreso" class="form-control" id="id_fecha_ingreso">
+                </div>
+                <div class="mb-3">
+                    <label for="id_fecha_salida" class="form-label">Fecha de Salida:</label>
+                    <input type="date" name="fecha_salida" class="form-control" id="id_fecha_salida">
+                </div>
+                <div class="mb-3">
+                    <label for="id_nro_habitacion" class="form-label">Número de Habitación:</label>
+                    <select name="nro_habitacion" class="form-control" id="id_nro_habitacion">
+                        {% for habitacion in habitaciones %}
+                            <option value="{{ habitacion.numero }}">{{ habitacion.numero }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="id_comentarios" class="form-label">Comentarios:</label>
+                    <textarea name="comentarios" class="form-control" id="id_comentarios"></textarea>
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-block">Agregar</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}

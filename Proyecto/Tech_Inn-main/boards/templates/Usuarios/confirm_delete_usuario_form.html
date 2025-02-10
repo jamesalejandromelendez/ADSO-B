@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELIMINAR CUENTA</title>
+    <link rel="stylesheet" href="{% static 'reser-actu-elimi.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-s">
+        <a href="/profile" class="enlace-1"><i class="ri-arrow-left-line"></i> Volver</a>
+        <a href="/signout"><button class="btn"><i class="ri-logout-box-line"></i> Cerrar sesión</button></a>
+    </header>
+
+    <div class="container">
+        <h3 class="form-heading">Confirme su contraseña</h3>
+        <form action="{% url 'confirm_delete_usuario' documento=user.documento %}" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="form-group">
+                    <div class="mb-3">
+                        <label for="id_password">Contraseña:</label>
+                        <input type="password" name="password" class="form-control" id="Contraseña" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-group mb-3">
+                        <button type="submit" class="btn btn-actualizar">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <footer>
+        <div class="logo">
+            <a href="#home"><img src="../static/img/logo.png" alt="logo" /></a>
+        </div>
+        <div class="footer__bar">
+            <p>Copyright © 2024 SENA. All rights reserved.</p>
+        </div>
+        <a href="/"><button class="btn">Inicio</button></a>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-image: url("https://img.freepik.com/vector-gratis/fondo-luminoso-puntos_1055-3132.jpg?t=st=1711566408~exp=1711570008~hmac=c740db549444db531d83c24326c6d1b3edb1c7e9de0478348ac9079edba8de0f&w=740");
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-s{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222831;
+    padding: 20px;
+}
+
+.enlace-1{
+    color: white;
+    text-decoration: none;
+}
+.enlace-1:hover{
+    color: #379237;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #379237;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #1A5D1A;
+}
+.btn-actualizar{
+    width: 100%;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #222831;
+    color: white;
+    border-radius: 15px;
+}
+
+.form-heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-custom {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-custom:hover {
+    background-color: #45a049;
+}
+
+.img-thumbnail {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+footer{
+    background-color: black;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo img{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer__bar p{
+    color: white;
+  }
+  
+@media (width < 768px) {
+    footer{
+      flex-direction: column;
+    }
+    .container {
+        padding: 10px;
+    }
+}

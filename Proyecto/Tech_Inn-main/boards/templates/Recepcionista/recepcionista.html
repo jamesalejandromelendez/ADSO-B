@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'panel.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Recepcionista</title>
+</head>
+<body>
+    <head>
+        <link rel="stylesheet" href="../../static/tablas.css">
+    </head>
+    <header class="header-s">
+        <a href="/" class="logo"><img src="../static/img/logo.png" alt="logo" /></a>
+        <div class="contenedor-nav">
+            <span><a href="/recepcionista" class="">Reservas</a></span>
+            <span><a href="/habitacion_recepcionista" class="">Habitaciones</a></span>
+            <span><a href="/consumo_recepcionista" class="">Consumos</a></span>
+            <span><a href="/factura_recepcionista" class="">Facturas</a></span>
+            <span><a href="{% url 'profile' %}" class="">Perfil</a></span>
+        </div>
+        <a href="/signout"><button class="boton">Salir</button></a>
+    </header>
+    <center><h2>Recepcionista</h2></center>
+    <h3>GESTIONAR RESERVAS</h3>
+    <section class="panel-usuarios">
+        <div class="container-superior">
+            <div class="container-botones">
+                <span><a href="/addnew_reserva_recepcionista" class="btn btn-1">Agregar Reserva</a></span>
+            </div>
+        </div>
+        <table class="tabla-desktop">
+            <tr>
+                <th>ID</th>
+                <th>Documento</th>
+                <th>Estado</th>
+                <th>Adultos</th>
+                <th>Niños</th>
+                <th>Ingreso</th>
+                <th>Salida</th>
+                <th>Habitación</th>
+                <th>Comentarios</th>
+                <th>Editar</th>
+                <th>Borrar</th>
+            </tr>
+            {% for reserva in reservas %}
+            <tr>
+                <td>{{ reserva.id }}</td>
+                <td>{{ reserva.documento_id}}</td>
+                <td>{{ reserva.estado }}</td>
+                <td>{{ reserva.cantidad_adultos }}</td>
+                <td>{{ reserva.cantidad_niños }}</td>
+                <td>{{ reserva.fecha_ingreso }}</td>
+                <td>{{ reserva.fecha_salida }}</td>
+                <td>{{ reserva.nro_habitacion_id }}</td>
+                <td>{{ reserva.comentarios }}</td>
+                <td><a href="/edit_reserva_recepcionista/{{ reserva.id }}" class="btn">Editar</a></td>
+                <td><a href="/delete_reserva/{{ reserva.id }}" class="btn btn-red">Borrar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+</html>

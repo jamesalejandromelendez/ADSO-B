@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}EDITAR CONSUMO{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="/update_consumo/{{ consumo.id }}/ ">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Actualizar datos del consumo</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="id_Reserva">ID Reserva:</label>
+                    {{ form.id_Reserva }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_Servicio">ID Servicio:</label>
+                    {{ form.id_Servicio }}
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad_s">Cantidad de servicios:</label>
+                    {{ form.cantidad_s }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_Producto">ID Producto:</label>
+                    {{ form.id_Producto }}
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad_p">Cantidad de productos:</label>
+                    {{ form.cantidad_p }}
+                </div>
+                <div class="mb-3">
+                    <label for="total">Total:</label>
+                    {{ form.total }}
+                </div>
+                <div class="mb-3">
+                    <label for="facturado">Facturado:</label>
+                    {{ form.facturado }}
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-block">Actualizar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}

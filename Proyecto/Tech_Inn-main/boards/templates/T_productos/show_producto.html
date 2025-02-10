@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}TIPO PRODUCTO{% endblock title %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_tipoproducto" class="btn btn-1">Agregar Tipo</a></span>
+        </div>
+        <h3>GESTIONAR TIPOS DE PRODUCTO</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        {% for tipoproducto in tipoproducto %}
+        <tr>
+            <td>{{ tipoproducto.id }}</td>
+            <td>{{ tipoproducto.categoria }}</td>
+            <td><a href="/edit_tipoproducto/{{ tipoproducto.id }}" class="btn">Editar</a></td>
+            <td><a href="/delete_tipoproducto/{{ tipoproducto.id }}" class="btn btn-red">Borrar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for tipoproducto in tipoproducto %}
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido">{{ tipoproducto.id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Tipo</div>
+                <div class="contenido">{{ tipoproducto.categoria }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Edit</div>
+                <div class="contenido"><a href="/edit_tipoproducto/{{ tipoproducto.id }}" class="btn">Edit</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Delete</div>
+                <div class="contenido"><a href="/delete_tipoproducto/{{ tipoproducto.id }}" class="btn btn-red">Delete</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

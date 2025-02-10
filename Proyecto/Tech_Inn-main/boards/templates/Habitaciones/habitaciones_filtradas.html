@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>HABITACIONES DISPONIBLES</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'habitaciones.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+    </head>
+<body>
+    <section class="panel-usuarios mb-5">
+        <table class="tabla-desktop">
+            <tr>
+                <th>Imágen</th>
+                <th>Habitación</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Ver</th>
+            </tr>
+            {% for habitacion in habitaciones_disponibles %}
+            <tr>
+                <td>
+                    {% if habitacion.imagen %}
+                        <img src="{{ habitacion.imagen.url }}" alt="Foto habitacion" class="foto-perfil">
+                    {% else %}
+                        Foto de perfil no disponible
+                    {% endif %}
+                </td>
+                <td>{{ habitacion.numero }}</td>
+                <td>{{ habitacion.tipo }}</td>
+                <td>{{ habitacion.costo_base }}</td>
+                <td><a href="/habitacion/{{ habitacion.numero }}/" class="btn">Ver</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5">No se encontraron habitaciones con los criterios especificados.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+    
+</body>
+</html>

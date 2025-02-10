@@ -1,0 +1,167 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>HABITACIONES DISPONIBLES</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'habitaciones.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body class="">
+    <header class="header-s">
+        <a href="/signout" class="enlace-1"><i class="ri-logout-box-line"></i> Cerrar sesión</a>
+        <a href="{% url 'profile' %}"><button class="btn">Perfil</button></a>
+    </header>
+
+    <div class="banner">
+        <h1>Habitaciones</h1>
+    </div>
+
+    <section  class="section__container booking__container mt-5">
+        <form action="/" class="booking__form">
+            <div class="input__group">
+                <span><i class="ri-calendar-2-fill"></i></span>
+                <div>
+                    <label for="fechaInicio">FECHA-INGRESO</label>
+                    <input type="text" placeholder="AAAA-MM-DD" id="fechaInicio" name="fechaInicio"/>
+                </div>
+            </div>
+
+            <div class="input__group">
+                <span><i class="ri-calendar-2-fill"></i></span>
+                <div>
+                    <label for="fechaFin">FECHA-SALIDA</label>
+                    <input type="text" placeholder="AAAA-MM-DD" id="fechaFin" name="fechaFin"/>
+                </div>
+            </div>
+
+            <div class="input__group">
+                <span><i class="ri-money-dollar-circle-fill"></i></span>
+                <div>
+                    <label for="rangoPrecio">RANGO-PRECIO</label>
+                    <input type="number" placeholder="Ingresar precio" />
+                </div>
+            </div>
+
+            <div class="input__group">
+                <span><i class="ri-hotel-fill"></i></span>
+                <div>
+                    <label for="personas">TIPO-HABITACION</label>
+                    <select class="form-control" name="tipo" id="tipo" required>
+                        {% for tipo_habitacion in tipos_habitacion %}
+                        <option value="{{ tipo_habitacion.id }}" {% if tipo_habitacion.id == habitacion.tipo.pk %}selected{% endif %}>{{ tipo_habitacion.tipo }}</option>
+                        {% endfor %}
+                    </select>
+                  <!-- <input type="text" placeholder="Ingresar personas" /> -->
+                </div>
+              </div>
+
+            <div class="input__group input__btn">
+            <button class="btn">COMPROBAR</button>
+            </div>
+        </form>
+    </section>
+    
+    <section id="contenidoEstaticoHabitaciones" class="panel-usuarios mb-5">
+        <table class="tabla-desktop">
+            <tr>
+                <th>Imágen</th>
+                <th>Habitación</th>
+                <th>Tipo</th>
+                <th>Precio</th>
+                <th>Ver</th>
+            </tr>
+            {% for habitacion in habitaciones_disponibles %}
+            <tr>
+                <td>
+                    {% if habitacion.imagen %}
+                        <img src="{{ habitacion.imagen.url }}" alt="Foto habitacion" class="foto-perfil">
+                    {% else %}
+                        Foto de perfil no disponible
+                    {% endif %}
+                </td>
+                <td>{{ habitacion.numero }}</td>
+                <td>{{ habitacion.tipo }}</td>
+                <td>{{ habitacion.costo_base }}</td>
+                
+                <td><a href="/habitacion/{{habitacion.numero}}/" class="btn">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <div class="tabla-mobile">
+            <div class="fila">
+                {% for habitacion in habitaciones_disponibles %}
+              <div class="columna">
+                    <div class="header">Imágen</div>
+                    <div class="contenido">
+                    {% if habitacion.imagen %}
+                        <img src="{{ habitacion.imagen.url }}" alt="Foto de perfil" class="foto-perfil">
+                    {% else %}
+                        Foto de perfil no disponible
+                    {% endif %}
+                    </div>
+                </div>
+                <div class="columna">
+                    <div class="header">Habitación</div>
+                    <div class="contenido">{{ habitacion.numero }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header"><p>Tipo</p></div>
+                    <div class="contenido"><p>{{ habitacion.tipo }}</p></div>
+                </div>
+                <div class="columna">
+                    <div class="header">Precio</div>
+                    <div class="contenido">{{ habitacion.costo_base }}</div>
+                </div>
+                <div class="columna">
+                    <div class="header">Ver</div>
+                    <div class="contenido"><a href="/habitacion/{{habitacion.numero}}/" class="btn">Editar</a></div>
+                </div>
+                <br>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section id="habitacionesTabla" class="panel-usuarios mb-5">
+        <!-- Tabla de habitaciones se llenará mediante AJAX -->
+    </section>
+
+    <footer class="d-flex align-items-center justify-content-between">
+        <div class="logo d-flex flex-column">
+            <a href="#home"><img src="../static/img/logo.png" alt="logo" /></a>
+        </div>
+        <div class="footer__bar">
+            <p>Copyright © 2024 SENA. All rights reserved.</p>
+        </div>
+        <a href="/"><button class="btn">Inicio</button></a>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          $(".booking__form").on("submit", function(event) {
+            event.preventDefault();
+            $.ajax({
+              url: "{% url 'filtrar_habitaciones' %}",
+              type: 'GET',
+              data: {
+                fechaInicio: $('#fechaInicio').val(),
+                fechaFin: $('#fechaFin').val(),
+                tipo: $('#tipo').val(),
+              },
+              success: function(data) {
+                    $('#habitacionesTabla').html(data.html);
+                    $('#contenidoEstaticoHabitaciones').hide();
+                }
+            });
+          });
+        });
+        </script>
+</body> 
+</html>
+</html>

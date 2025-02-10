@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Eliminación de Cuenta</title>
+</head>
+<body>
+    <h2>Confirmar Eliminación de Cuenta</h2>
+    <p>Por favor, confirma que deseas eliminar tu cuenta. Esta acción no se puede deshacer.</p>
+    <p>Si estás seguro de que deseas eliminar tu cuenta, haz clic en el botón "Eliminar Cuenta".</p>
+    <form action="{% url 'delete_usuario' documento=usuario.documento %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Eliminar Cuenta</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}TIPO USUARIO{% endblock title %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_tipousuario" class="btn btn-1">Agregar Tipo</a></span>
+        </div>
+        <h3>GESTIONAR TIPOS DE USUARIO</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        {% for tipousuario in tipousuario %}
+        <tr>
+            <td>{{ tipousuario.id }}</td>
+            <td>{{ tipousuario.rol }}</td>
+            <td><a href="/edit_tipousuario/{{ tipousuario.id }}" class="btn">Editar</a></td>
+            <td><a href="/delete_tipousuario/{{ tipousuario.id }}" class="btn btn-red">Borrar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for tipousuario in tipousuario %}
+            <div class="columna">
+                <div class="header">Id</div>
+                <div class="contenido">{{ tipousuario.id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Tipo</div>
+                <div class="contenido">{{ tipousuario.rol }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Editar</div>
+                <div class="contenido"><a href="/edit_tipousuario/{{ tipousuario.id }}" class="btn">Editar</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Borrar</div>
+                <div class="contenido"><a href="/delete_tipousuario/{{ tipousuario.id }}" class="btn btn-red">Borrar</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}USUARIOS{% endblock title %}
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_usuario" class="btn btn-1">Aregar usuario</a></span>
+            <span><a href="/crud_tipousuario" class="btn btn-2">Tipo usuario</a></span>
+        </div>
+        <h3>GESTIONAR USUARIOS</h3>
+    </div>
+    <table class="tabla-desktop" id="usuarios-table">
+        <tr>
+            <th>Documento</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Genero</th>
+            <th>Tipo</th>
+            <th>Foto</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+            <th>Reservas</th>
+        </tr>
+        {% for usu in usuarios %}
+        <tr>
+            <td>{{ usu.documento }}</td>
+            <td>{{ usu.Nombre }}</td>
+            <td>{{ usu.Apellido }}</td>
+            <td>{{ usu.email }}</td>
+            <td>{{ usu.telefono }}</td>
+            <td>{{ usu.genero }}</td>
+            <td>{{ usu.tipo }}</td>
+            <td>
+                {% if usu.foto %}
+                    <img src="{{ usu.foto.url }}" alt="Foto de perfil" class="foto-perfil">
+                {% else %}
+                    Foto de perfil no disponible
+                {% endif %}
+            </td>
+            <td><a href="/edit_usuario/{{ usu.documento }}" class="btn">Editar</a></td>
+            <td><a href="/delete_usuario/{{ usu.documento }}" class="btn btn-red">Borrar</a></td>
+            <td><a href="/reservas_x_usuario/{{ usu.documento }}" class="btn">Reservas</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for usu in usuarios %}
+            <div class="columna">
+                <div class="header">Documento</div>
+                <div class="contenido">{{ usu.documento }}</div>
+            </div>
+            <div class="columna">
+                <div class="header"><p>Nombre</p></div>
+                <div class="contenido"><p>{{ usu.Nombre }}</p></div>
+            </div>
+            <div class="columna">
+                <div class="header">Apellido</div>
+                <div class="contenido">{{ usu.Apellido }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Email</div>
+                <div class="contenido">{{ usu.email }}</div>
+            </div>
+            <div class="columna">
+                <div class="header"><p>Teléfono</p></div>
+                <div class="contenido"><p>{{ usu.telefono }}</p></div>
+            </div>
+            <div class="columna">
+                <div class="header">Género</div>
+                <div class="contenido">{{ usu.genero }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Tipo</div>
+                <div class="contenido">{{ usu.tipo }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Foto</div>
+                <div class="contenido">
+                {% if usu.foto %}
+                    <img src="{{ usu.foto.url }}" alt="Foto de perfil" class="foto-perfil">
+                {% else %}
+                    Foto de perfil no disponible
+                {% endif %}
+                </div>
+            </div>
+            <div class="columna">
+                <div class="header">Editar</div>
+                <div class="contenido"><a href="/edit_usuario/{{ usu.documento }}" class="btn">Editar</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Borrar</div>
+                <div class="contenido"><a href="/delete_usuario/{{ usu.documento }}" class="btn btn-red">Borrar</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Reservas</div>
+                <div class="contenido"><a href="/reservas_x_usuario/{{ usu.documento }}" class="btn btn-ultimo">Reservas</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

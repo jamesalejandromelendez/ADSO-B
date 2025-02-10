@@ -1,0 +1,270 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>HOTEL SENA</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo">
+            <a href="#"><img src="../static/img/logo.png" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#service">Servicios</a></li>
+          <li><a href="#explore">Explorar</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><a href="/signin"><button class="btn nav__btn">Iniciar Sesión</button></a></li>
+        </ul>
+        <div class="logo logo-sistema">
+          <a href="#"><img src="../static/img/logo.png" alt="logo" /></a>
+        </div>
+        <!-- <a href="/signin"><button class="btn nav__btn">Iniciar Sesión</button></a> -->
+      </nav>
+      <div class="section__container header__container" id="home">
+        <p>Simple - Único - Amigable</p>
+        <h1>Siéntete como en casa<br/>Bienvenido a<span> HOTEL SENA</span></h1>
+      </div>
+    </header>
+
+    <!-- <section class="section__container booking__container">
+      <form action="/" class="booking__form">
+        <div class="input__group">
+          <span><i class="ri-calendar-2-fill"></i></span>
+          <div>
+            <label for="check-in">FECHA-INGRESO</label>
+            <input type="text" placeholder="Ingresar fecha" />
+          </div>
+        </div>
+        <div class="input__group">
+          <span><i class="ri-calendar-2-fill"></i></span>
+          <div>
+            <label for="check-out">FECHA-SALIDA</label>
+            <input type="text" placeholder="Ingresar fecha" />
+          </div>
+        </div>
+        <div class="input__group">
+          <span><i class="ri-user-fill"></i></span>
+          <div>
+            <label for="guest">PERSONAS</label>
+            <input type="text" placeholder="Ingresar personas" />
+          </div>
+        </div>
+        <div class="input__group input__btn">
+          <button class="btn">COMPROBAR</button>
+        </div>
+      </form>
+    </section> -->
+
+    <section class="section__container about__container" id="about">
+      <div class="about__image">
+        <img src="../static/img/about.jpg" alt="about" />
+      </div>
+      <div class="about__content">
+        <p class="section__subheader">NOSOTROS</p>
+        <h2 class="section__header">Tu mejor compañía</h2>
+        <p class="section__description">
+          Descripción
+        </p>
+        <div class="about__btn">
+          <button class="btn">Saber más</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container room__container">
+      <p class="section__subheader">HABITACIONES</p>
+      <h2 class="section__header">Nos ajustamos a tu medida</h2>
+      <div class="room__grid">
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="../static/img/room-1.jpg" alt="room" />
+            <div class="room__card__icons">
+              <!-- <span><i class="ri-heart-fill"></i></span> -->
+              <!-- <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span> -->
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Habitación simple</h4>
+            <p>
+              Descripción
+            </p>
+            <h5>Precio <span>$40.000 / Noche</span></h5>
+            {% if user.is_authenticated %}
+                <a href="/habitaciones_disponibles/?documento={{ user.documento }}"><button class="btn">Ver más</button></a>
+            {% else %}
+                <a href="/signin"><button class="btn">Ver más</button></a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="../static/img/room-2.jpg" alt="room" />
+            <div class="room__card__icons">
+              <!-- <span><i class="ri-heart-fill"></i></span> -->
+              <!-- <span><i class="ri-paint-fill"></i></span> -->
+              <!-- <span><i class="ri-shield-star-line"></i></span> -->
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Habitación ejecutiva</h4>
+            <p>
+              Descripción
+            </p>
+            <h5>Precio <span>$80.000 / Noche</span></h5>
+            {% if user.is_authenticated %}
+                <a href="/habitaciones_disponibles/?documento={{ user.documento }}"><button class="btn">Ver más</button></a>
+            {% else %}
+                <a href="/signin"><button class="btn">Ver más</button></a>
+            {% endif %}
+          </div>
+        </div>
+        <div class="room__card">
+          <div class="room__card__image">
+            <img src="../static/img/room-3.jpg" alt="room" />
+            <div class="room__card__icons">
+              <!-- <span><i class="ri-heart-fill"></i></span> -->
+              <!-- <span><i class="ri-paint-fill"></i></span>
+              <span><i class="ri-shield-star-line"></i></span> -->
+            </div>
+          </div>
+          <div class="room__card__details">
+            <h4>Suite</h4>
+            <p>
+              Descripción
+            </p>
+            <h5>Precio <span>$120.000 / Noche</span></h5>
+            {% if user.is_authenticated %}
+                <a href="/habitaciones_disponibles/?documento={{ user.documento }}"><button class="btn">Ver más</button></a>
+            {% else %}
+                <a href="/signin"><button class="btn">Ver más</button></a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="service" id="service">
+      <div class="section__container service__container">
+        <div class="service__content">
+          <p class="section__subheader">SERVICIOS</p>
+          <h2 class="section__header">Disfruta tu estadía</h2>
+          <ul class="service__list">
+            <li>
+              <span><i class="ri-restaurant-line"></i></span>
+              Restaurante
+            </li>
+            <li>
+              <span><i class="ri-service-line"></i></span>
+              Masajes y spa
+            </li>
+            <li>
+              <span><i class="ri-drinks-line"></i></span>
+              Bar y bebidas
+            </li>
+            <li>
+              <span><i class="ri-24-hours-line"></i></span>
+              Servicio 24/7
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container banner__container">
+      <div class="banner__content">
+        <div class="banner__card">
+          <h4>25+</h4>
+          <p>Más de 25 ciudades</p>
+        </div>
+        <div class="banner__card">
+          <h4>350+</h4>
+          <p>Más de 350 reseñas positivas</p>
+        </div>
+        <div class="banner__card">
+          <h4>600+</h4>
+          <p>Más de 600 clientes</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="explore" id="explore">
+      <p class="section__subheader">EXPLORAR</p>
+      <h2 class="section__header">Restaurante y bar</h2>
+      <div class="explore__bg">
+        <div class="explore__content">
+          <p class="section__description">MAR 2023</p>
+          <h4>Menú disponible para este mes</h4>
+          <button class="btn">Explorar</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" id="contact">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="logo">
+            <a href="#home"><img src="../static/img/logo.png" alt="logo" /></a>
+          </div>
+          <p class="section__description">
+            Algo aquí
+          </p>
+          <a href="/signin"><button class="btn">Iniciar Sesión</button></a>
+          <!-- <button class="btn">Reservar ahora</button> -->
+        </div>
+        <div class="footer__col">
+          <h4>LINKS DE INTERÉS</h4>
+          <ul class="footer__links">
+            <li><a href="#">Github</a></li>
+            <li><a href="#">Blog cide</a></li>
+            <li><a href="#">Sena</a></li>
+            <li><a href="#">Otros</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>SERVICIOS</h4>
+          <ul class="footer__links">
+            <li><a href="#">Restaurante</a></li>
+            <li><a href="#">Masajes</a></li>
+            <li><a href="#">Bar</a></li>
+            <li><a href="#">Otros</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>CONTACTO</h4>
+          <ul class="footer__links">
+            <li><a href="#">correo@correo.com</a></li>
+          </ul>
+          <div class="footer__socials">
+            <a href="#"><img src="../static/img/facebook.png" alt="facebook" /></a>
+            <a href="#"><img src="../static/img/instagram.png" alt="instagram" /></a>
+            <a href="#"><img src="../static/img/youtube.png" alt="youtube" /></a>
+            <a href="#"><img src="../static/img/twitter.png" alt="twitter" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 SENA. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}AGREGAR TIPO PRODUCTO{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="/addnew_tipoproducto">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Ingrese datos del tipo de producto</h2>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">ID:</label>
+                    {{ form.id }}
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tipo:</label>
+                    {{ form.categoria }}
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">Agregar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}
+

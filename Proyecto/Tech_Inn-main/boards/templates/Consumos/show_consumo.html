@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}CONSUMOS{% endblock title %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_consumo" class="btn btn-1">Agregar consumo</a></span>
+        </div>
+        <h3>GESTIONAR CONSUMOS</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>ID Reserva</th>
+            <th>ID Servicio</th>
+            <th>Cantidad S</th>
+            <th>ID Producto</th>
+            <th>Cantidad P</th>
+            <th>Total</th>
+            <th>Facturado</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        {% for consumo in consumos %}
+        <tr>
+            <td>{{ consumo.id }}</td>
+            <td>{{ consumo.id_Reserva }}</td>
+            <td>{{ consumo.id_Servicio }}</td>
+            <td>{{ consumo.cantidad_s }}</td>
+            <td>{{ consumo.id_Producto }}</td>
+            <td>{{ consumo.cantidad_p }}</td>
+            <td>{{ consumo.total }}</td>
+            <td>{{ consumo.facturado }}</td>
+            <td><a href="/edit_consumo/{{ consumo.id }}" class="btn">Editar</a></td>
+            <td><a href="/delete_consumo/{{ consumo.id }}" class="btn btn-red">Borrar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for consumo in consumos %}
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido">{{ consumo.id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">ID Reserva</div>
+                <div class="contenido">{{ consumo.id_Reserva }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">ID Servicio</div>
+                <div class="contenido">{{ consumo.id_Servicio }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Cantidad S</div>
+                <div class="contenido">{{ consumo.cantidad_s }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">ID Producto</div>
+                <div class="contenido">{{ consumo.id_Producto }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Cantidad P</div>
+                <div class="contenido">{{ consumo.cantidad_p }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Total</div>
+                <div class="contenido">{{ consumo.total }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Facturado</div>
+                <div class="contenido">{{ consumo.facturado }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Editar</div>
+                <div class="contenido"><a href="/edit_consumo/{{ consumo.id }}" class="btn">Editar</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Eliminar</div>
+                <div class="contenido"><a href="/delete_consumo/{{ consumo.id }}" class="btn btn-red">Eliminar</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

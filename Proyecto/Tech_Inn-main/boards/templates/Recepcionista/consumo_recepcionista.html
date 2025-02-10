@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'panel.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+    <title>Recepcionista</title>
+</head>
+<body>
+    <head>
+        <link rel="stylesheet" href="../../static/tablas.css">
+    </head>
+    <header class="header-s">
+        <a href="/" class="logo"><img src="../static/img/logo.png" alt="logo" /></a>
+        <div class="contenedor-nav">
+            <span><a href="/recepcionista" class="">Reservas</a></span>
+            <span><a href="/habitacion_recepcionista" class="">Habitaciones</a></span>
+            <span><a href="/consumo_recepcionista" class="">Consumos</a></span>
+            <span><a href="/factura_recepcionista" class="">Facturas</a></span>
+            <span><a href="{% url 'profile' %}" class="">Perfil</a></span>
+        </div>
+        <a href="/signout"><button class="boton">Salir</button></a>
+    </header>
+    <center><h2>Recepcionista</h2></center>
+    <h3>GESTIONAR CONSUMOS</h3>
+    <section class="panel-usuarios">
+        <div class="container-superior">
+            <div class="container-botones">
+                <span><a href="/addnew_consumo_recepcionista" class="btn btn-1">Agregar consumo</a></span>
+            </div>
+        </div>
+        <table class="tabla-desktop">
+            <tr>
+                <th>ID</th>
+                <th>ID Reserva</th>
+                <th>ID Servicio</th>
+                <th>Cantidad S</th>
+                <th>ID Producto</th>
+                <th>Cantidad P</th>
+                <th>Total</th>
+                <th>Facturado</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+            {% for consumo in consumos %}
+            <tr>
+                <td>{{ consumo.id }}</td>
+                <td>{{ consumo.id_Reserva }}</td>
+                <td>{{ consumo.id_Servicio }}</td>
+                <td>{{ consumo.cantidad_s }}</td>
+                <td>{{ consumo.id_Producto }}</td>
+                <td>{{ consumo.cantidad_p }}</td>
+                <td>{{ consumo.total }}</td>
+                <td>{{ consumo.facturado }}</td>
+                <td><a href="/edit_consumo_recepcionista/{{ consumo.id }}" class="btn">Editar</a></td>
+                <td><a href="/delete_consumo/{{ consumo.id }}" class="btn btn-red">Borrar</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</body>
+</html>

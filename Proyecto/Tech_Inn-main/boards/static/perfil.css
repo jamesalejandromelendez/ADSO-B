@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+/* :root {
+--primary-color: #379237;
+--primary-color-dark: #1A5D1A;
+--text-dark: #0c0a09;
+--text-light: #78716c;
+--white: #ffffff;
+--max-width: 1200px;
+} */
+
+body {
+    background-image: url("https://img.freepik.com/foto-gratis/resumen-venta-busioness-fondo-banner-diseno-multiproposito_1340-16803.jpg?t=st=1711838145~exp=1711841745~hmac=419cc236f8e47fa71fd6ebc3a9382e229e599341f3e86c26f11b25625e96ac74&w=996");
+    background-size: cover; /* ajusta la imagen al tamaño del contenedor sin repetirla */
+    background-repeat: no-repeat;
+    font-family: "Poppins", sans-serif;
+}
+
+.header-s{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222831;
+    padding: 20px;
+}
+
+.enlace-1{
+    color: white;
+    text-decoration: none;
+}
+.enlace-1:hover{
+    color: #379237;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #379237;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #1A5D1A;
+}
+
+.seccion-perfil{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 400px;
+    margin-top: 100px;
+}
+
+.contenedor-superior{
+    height: 30%;
+    background-image: url("https://img.freepik.com/free-photo/laser-show-glowing-lines-neon-lights-with-black-background_181624-19695.jpg?t=st=1711642480~exp=1711646080~hmac=f8b634375faaf0e93d15695d8916a3d858df71652d5cdf4420ba72eba4e1432a&w=900");
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    color: white;
+}
+
+.contenedor-superior h1{
+    margin-top: 20px;
+}
+
+.foto-perfil{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 100px;
+    margin-left: 150px;
+    border: 2px solid white;
+    position: absolute;
+}
+
+.contenedor-inferior{
+    height: 70%;
+    background-color: #222831;
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-usuario{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.opciones{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.op{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ayuda-soporte{
+    margin-top: 100px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.ayuda-soporte a{
+    color: #379237;
+    text-decoration: none;
+}
+
+.ayuda-soporte a:hover{
+    color: #1A5D1A;
+}
+
+footer{
+    background-color: black;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo img{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer__bar p{
+    color: white;
+  }
+  
+@media (width < 768px) {
+    footer{
+      flex-direction: column;
+    }
+}
+
+@media (width < 400px) {
+    .tarjeta{
+        width: 100%;
+        height: auto; /* Cambiar a auto para que la altura se ajuste automáticamente */
+    }
+    .opciones{
+        flex-direction: column;
+    }
+    .foto-perfil{
+        height: 70px; /* Cambiar la altura de la foto de perfil para ajustarla al nuevo tamaño */
+        width: 70px; /* Cambiar el ancho de la foto de perfil para mantener la proporción */
+        border-radius: 50%; /* Mantener el borde redondeado */
+        margin-top: -35px; /* Ajustar el margen superior negativo para alinear la foto en la parte superior de la tarjeta */
+        margin-left: 15px; /* Ajustar el margen izquierdo para separar la foto del borde izquierdo */
+    }
+    .contenedor-superior {
+        height: 30%; /* Mantener la altura del contenedor superior */
+    }
+    .ayuda-soporte{
+        margin-top: 50px;
+    }
+  }

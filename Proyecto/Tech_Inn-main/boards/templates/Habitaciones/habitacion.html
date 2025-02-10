@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DETALLES HABITACIÓN</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'detalle-habitacion.css' %}">
+</head>
+<body class="bg-light">
+
+    <header class="header-s">
+        <a href="/habitaciones_disponibles"  class="enlace-1"><i class="ri-arrow-left-line"></i> Volver</a>
+        <a href="/signout"><button class="btn"><i class="ri-logout-box-line"></i> Cerrar sesión</button></a>
+    </header>
+
+    <section class="container-tarjeta">
+        <div class="titulo">
+            <h1>Detalles habitación</h1>
+        </div>
+        <div class="tarjeta">
+            <div class="izquierdo">
+                <div class="titulo-2">
+                    <h2>Habitacion {{ habitacion.numero }}</h2>
+                </div>
+
+                <div class="informacion">
+                    <p><span>Tipo:</span> {{ habitacion.tipo }}</p>
+                    <p><span>Precio:</span> {{ habitacion.costo_base }}</p>
+                    <p><span>Descripcion:</span> {{ habitacion.caracteristicas }}</p>
+                    <p><span>Estado:</span> {{ habitacion.estado }}</p>
+                    <p><span>Capacidad:</span> {{ habitacion.capacidad }}</p>
+                    <p><span>Camas sencillas:</span> {{ habitacion.nro_cama_sencilla }}</p>
+                    <p><span>Camas dobles:</span> {{ habitacion.nro_cama_doble }}</p>
+                    <p><span>Camarotes:</span> {{ habitacion.nro_camarotes }}</p>
+                </div>
+                
+                <form action="{% url 'confirmacion_reserva' habitacion.numero %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-reservar">Reservar esta habitación</button>
+                </form>
+            </div>
+
+            <div class="derecho">
+            {% if habitacion.imagen %}
+                <img src="{{ habitacion.imagen.url }}" alt="Imagen de la habitación">
+            {% else %}
+                <p>No hay imagen disponible</p>
+            {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="logo">
+            <a href="#home"><img src="../../static/img/logo.png" alt="logo" /></a>
+        </div>
+        <div class="footer__bar">
+            <p>Copyright © 2024 SENA. All rights reserved.</p>
+        </div>
+        <a href="/"><button class="btn">Inicio</button></a>
+    </footer>
+    
+</body>
+</html>

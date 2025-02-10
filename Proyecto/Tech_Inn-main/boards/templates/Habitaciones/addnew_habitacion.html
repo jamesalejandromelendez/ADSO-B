@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}AGREGAR HABITACIONES{% endblock title %}
+
+{% block content %}
+
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="/addnew_habitacion" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Ingresar datos de habitación</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="numero" class="form-label">Numero:</label>
+                    {{ form.numero }}
+                </div>
+                <div class="mb-3">
+                    <label for="estado" class="form-label">Estado:</label>
+                    {{ form.estado }}
+                </div>
+                <div class="mb-3">
+                    <label for="caracteristicas" class="form-label">Caracteristicas:</label>
+                    {{ form.caracteristicas }}
+                </div>
+                <div class="mb-3">
+                    <label for="costo_base" class="form-label">Costo base:</label>
+                    {{ form.costo_base }}
+                </div>
+                <div class="mb-3">
+                    <label for="capacidad" class="form-label">Capacidad:</label>
+                    {{ form.capacidad }}
+                </div>
+                <div class="mb-3">
+                    <label for="nro_cama_sencilla" class="form-label">Camas sencillas:</label>
+                    {{ form.nro_cama_sencilla }}
+                </div>
+                <div class="mb-3">
+                    <label for="nro_cama_doble" class="form-label">Camas dobles:</label>
+                    {{ form.nro_cama_doble }}
+                </div>
+                <div class="mb-3">
+                    <label for="nro_camarotes" class="form-label">Camarotes:</label>
+                    {{ form.nro_camarotes }}
+                </div>
+                <div class="mb-3">
+                    <label for="tipo" class="form-label">Tipo:</label>
+                    {{ form.tipo }}
+                </div>
+                <div class="mb-3">
+                    <label for="imagen" class="form-label">Imagen:</label>
+                    {{ form.imagen }}
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}

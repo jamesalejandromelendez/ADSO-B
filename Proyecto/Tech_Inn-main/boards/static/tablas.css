@@ -1,0 +1,123 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.panel-usuarios{  
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.container-superior{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.container-botones{
+    display: flex;
+}
+.container-botones .btn{
+    margin-right: 10px;
+}
+
+.foto-perfil{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+.btn {
+    padding: 0.6rem 0.9rem;
+    outline: none;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: white;
+    background-color: #379237;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover {
+    background-color: #1A5D1A;
+    color: white;
+}
+.btn-red{
+    background-color: #E72929;
+}
+.btn-red:hover{
+    background-color: #8B0000;
+}
+
+/* TABLA PARA ESCRITORIOS */
+
+.tabla-desktop{
+    width: 95%;
+    border-collapse: collapse;
+}
+.tabla-desktop tr th{
+    background-color: #222831;
+    color: white;
+    border: 1px solid #909090;
+    padding: 5px;
+    text-align: left;
+}
+.tabla-desktop tr td{
+    border: 1px solid #909090;
+    padding: 5px;
+}
+.tabla-desktop tr:nth-of-type(odd){
+    background-color: #e6e6e6;
+}
+
+/* TABLA PARA MÓBILES */
+
+.tabla-mobile{
+    display: none;
+    width: 100%;
+}
+.tabla-mobile .fila .columna{
+    display: flex;
+}
+.tabla-mobile .fila .columna .header, 
+.tabla-mobile .fila .columna .contenido{
+    border: 1px solid #909090;
+    border-bottom: none;
+    padding: 10px;
+}
+.tabla-mobile .fila .columna .header{
+    width: 40%;
+    background-color: #222831;
+    color: white;
+    font-weight: bold;
+}
+.tabla-mobile .fila .columna .contenido{
+    width: 60%;
+    white-space: nowrap; /* Evita el retorno de línea del texto */
+    overflow: hidden; /* Oculta cualquier parte del contenido que desborde */
+    text-overflow: ellipsis;
+}
+.tabla-mobile .fila .columna .contenido{
+    border-bottom: 1px solid #909090;
+}
+
+@media (width < 768px) {
+    .tabla-desktop{
+        display: none;
+    }
+    .tabla-mobile{
+        display: block;
+    }
+  }
+
+@media (width < 520px) {
+    .container-superior{
+        flex-direction: column;
+    }
+    .container-botones{
+        margin-bottom: 20px;
+    }
+}

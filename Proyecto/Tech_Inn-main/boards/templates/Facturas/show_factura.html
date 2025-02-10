@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}FACTURAS{% endblock title %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="" class="btn btn-1">Imprimir</a></span>
+        </div>
+        <h3>FACTURAS</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>Fecha</th>
+            <th>Total</th>
+            <th>Reserva ID</th>
+            <th>Detalles</th>
+        </tr>
+        {% for factura in facturas %}
+        <tr>
+            <td>{{ factura.Id }}</td>
+            <td>{{ factura.Fecha }}</td>
+            <td>{{ factura.Total }}</td>
+            <td>{{ factura.id_Reserva_id }}</td>
+            <td><a href="" class="btn">Detalles</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for factura in facturas %}
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido">{{ factura.Id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header"><p>Fecha</p></div>
+                <div class="contenido"><p>{{ factura.Fecha }}</p></div>
+            </div>
+            <div class="columna">
+                <div class="header">Total</div>
+                <div class="contenido">{{ factura.Total }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Reserva ID</div>
+                <div class="contenido">{{ factura.id_Reserva_id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Detalles</div>
+                <div class="contenido"><a href="" class="btn">Detalles</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock content %}
+</section>

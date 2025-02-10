@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}TIPO SERVICIOS{% endblock title %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="{% url 'addnew_tiposervicio' %}" class="btn btn-1">Agregar Tipo de Servicio</a></span>
+        </div>
+        <h3>GESTIONAR TIPOS DE SERVICIO</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        {% for tipo_servicio in tipos_servicio %}
+        <tr>
+            <td>{{ tipo_servicio.id }}</td>
+            <td>{{ tipo_servicio.nombre }}</td>
+            <td><a href="{% url 'edit_tiposervicio' tipo_servicio.id %}" class="btn">Editar</a></td>
+            <td><a href="{% url 'destroy_tiposervicio' tipo_servicio.id %}" class="btn btn-red">Borrar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for tipo_servicio in tipos_servicio %}
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido">{{ tipo_servicio.id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Nombre</div>
+                <div class="contenido">{{ tipo_servicio.nombre }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Edit</div>
+                <div class="contenido"><a href="{% url 'edit_tiposervicio' tipo_servicio.id %}" class="btn">Edit</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Delete</div>
+                <div class="contenido"><a href="{% url 'destroy_tiposervicio' tipo_servicio.id %}" class="btn btn-red">Delete</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

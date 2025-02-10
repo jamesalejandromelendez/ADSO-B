@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("https://img.freepik.com/vector-gratis/fondo-luminoso-puntos_1055-3132.jpg?t=st=1711566408~exp=1711570008~hmac=c740db549444db531d83c24326c6d1b3edb1c7e9de0478348ac9079edba8de0f&w=740");
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-s{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222831;
+    padding: 20px;
+}
+
+.enlace-1{
+    color: white;
+    text-decoration: none;
+}
+.enlace-1:hover{
+    color: #379237;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #379237;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #1A5D1A;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #222831;
+    color: white;
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 20px;
+    margin-top: 20px;
+}
+.container p {
+    margin-bottom: 10px;
+}
+.container span{
+    font-weight: bold;
+    color: #379237;
+    margin-right: 5px;
+}
+
+/* Estilos para la lista de reservas */
+.list-group {
+    list-style: none;
+    padding: 0;
+}
+
+.list-group-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+footer{
+    background-color: black;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo img{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer__bar p{
+    color: white;
+  }
+  
+@media (width < 768px) {
+    footer{
+      flex-direction: column;
+    }
+    .container {
+        padding: 10px;
+    }
+}

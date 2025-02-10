@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block title %}RESERVAS{% endblock title %}
+
+{% block content %}
+
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_reserva" class="btn btn-1">Agregar Reserva</a></span>
+        </div>
+        <h3>GESTIONAR RESERVAS</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>Documento</th>
+            <th>Estado</th>
+            <th>Adultos</th>
+            <th>Niños</th>
+            <th>Ingreso</th>
+            <th>Salida</th>
+            <th>Habitación</th>
+            <th>Comentarios</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        {% for reserva in reservas %}
+        <tr>
+            <td>{{ reserva.id }}</td>
+            <td>{{ reserva.documento_id}}</td>
+            <td>{{ reserva.estado }}</td>
+            <td>{{ reserva.cantidad_adultos }}</td>
+            <td>{{ reserva.cantidad_niños }}</td>
+            <td>{{ reserva.fecha_ingreso }}</td>
+            <td>{{ reserva.fecha_salida }}</td>
+            <td>{{ reserva.nro_habitacion_id }}</td>
+            <td>{{ reserva.comentarios }}</td>
+            <td><a href="/edit_reserva/{{ reserva.id }}" class="btn">Editar</a></td>
+            <td><a href="/delete_reserva/{{ reserva.id }}" class="btn btn-red">Borrar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for reserva in reservas %}
+            <div class="columna">
+                <div class="header">Id</div>
+                <div class="contenido">{{ reserva.id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Documento</div>
+                <div class="contenido">{{ reserva.documento_id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Estado</div>
+                <div class="contenido">{{ reserva.estado }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Cantidad Adultos</div>
+                <div class="contenido">{{ reserva.cantidad_adultos }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Cantidad Niños</div>
+                <div class="contenido">{{ reserva.cantidad_niños }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Fecha Ingreso</div>
+                <div class="contenido">{{ reserva.fecha_ingreso }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Fecha Salida</div>
+                <div class="contenido">{{ reserva.fecha_salida }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Nro Habitación</div>
+                <div class="contenido">{{ reserva.nro_habitacion_id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Comentarios</div>
+                <div class="contenido">{{ reserva.comentarios }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Editar</div>
+                <div class="contenido"><a href="/edit_reserva/{{ reserva.id }}" class="btn">Editar</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Borrar</div>
+                <div class="contenido"><a href="/delete_reserva/{{ reserva.id }}" class="btn btn-red">Borrar</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

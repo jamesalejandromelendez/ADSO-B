@@ -1,0 +1,105 @@
+body{
+    background-image: url("https://img.freepik.com/vector-gratis/fondo-luminoso-puntos_1055-3132.jpg?t=st=1711566408~exp=1711570008~hmac=c740db549444db531d83c24326c6d1b3edb1c7e9de0478348ac9079edba8de0f&w=740");
+}
+
+.header-s{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222831;
+    padding: 20px;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+}
+
+.titulo{
+    color: white;
+    margin-top: 20px;
+}
+
+.formulario{
+    background-color: #222831;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.formulario-2{
+    background-color: #222831;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    
+}
+
+.grupo{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.grupo p{
+    color: white;
+}
+
+.grupo span{
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.formulario label{
+    color: white;
+}
+
+.formulario input{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+}
+
+.enlace-1{
+    color: white;
+}
+.enlace-1:hover{
+    color: #379237;
+}
+
+.enlace-2{
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.enlace-2:hover{
+    color: #379237;
+}
+
+.boton{
+    width: 100%;
+    padding: 10px;
+}
+
+@media (width < 576px) {
+    /* .header-s{
+        display: flex;
+        flex-direction: column;
+        height: 120px;
+    } */
+    .contenedor{
+        width: 100%;
+    }
+    /* .boton-registro{
+        display: block;
+    } */
+  }

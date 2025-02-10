@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}SERVICIOS{% endblock title %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" href="../../static/tablas.css">
+</head>
+
+<section class="panel-usuarios">
+    <div class="container-superior">
+        <div class="container-botones">
+            <span><a href="/addnew_servicio" class="btn btn-1">Agregar servicio</a></span>
+            <span><a href="/crud_tiposervicio" class="btn btn-2">Tipo servicio</a></span>
+        </div>
+        <h3>GESTIONAR SERVICIOS</h3>
+    </div>
+    <table class="tabla-desktop">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Costo</th>
+            <th>Tipo</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        {% for servicio in servicios %}
+        <tr>
+            <td>{{ servicio.id }}</td>
+            <td>{{ servicio.nombre }}</td>
+            <td>{{ servicio.descripcion }}</td>
+            <td>{{ servicio.costo }}</td>
+            <td>{{ servicio.id_tipo }}</td>
+            <td><a href="/edit_servicio/{{ servicio.id }}" class="btn">Editar</a></td>
+            <td><a href="/delete_servicio/{{ servicio.id }}" class="btn btn-red">Borrar</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="tabla-mobile">
+        <div class="fila">
+            {% for servicio in servicios %}
+            <div class="columna">
+                <div class="header">ID</div>
+                <div class="contenido">{{ servicio.id }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Nombre</div>
+                <div class="contenido">{{ servicio.nombre }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Descripcion</div>
+                <div class="contenido">{{ servicio.descripcion }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Costo</div>
+                <div class="contenido">{{ servicio.costo }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Tipo</div>
+                <div class="contenido">{{ servicio.id_tipo }}</div>
+            </div>
+            <div class="columna">
+                <div class="header">Editar</div>
+                <div class="contenido"><a href="/edit_servicio/{{ servicio.id }}" class="btn">Editar</a></div>
+            </div>
+            <div class="columna">
+                <div class="header">Borrar</div>
+                <div class="contenido"><a href="/delete_servicio/{{ servicio.id }}" class="btn btn-red">Borrar</a></div>
+            </div>
+            <br>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

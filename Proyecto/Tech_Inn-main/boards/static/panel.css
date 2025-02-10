@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header-s{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222831;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 47px; /* Cambia este valor al tamaño deseado */
+    height: 100%; /* Esto mantendrá la proporción original */
+}
+
+.contenedor-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 50%;
+}
+
+.contenedor-nav span a {
+    color: white;
+    text-decoration: none;
+    position: relative; /* Añadir esta línea */
+}
+
+.contenedor-nav span a:hover {
+    border-bottom: 3px solid #379237; /* Añadir esta línea */
+    color: #379237;
+}
+
+.boton{
+    width: 100px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #379237;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #1A5D1A;
+  }
+
+  footer{
+    margin-top: 30px;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    background-color: black;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .logo{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo img{
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer__bar p{
+    color: white;
+  }
+
+/* MOBILE */
+
+.header-s-2{
+    display: none;
+    background-color: #222831;
+    padding: 20px 20px 20px 5px;
+    margin-bottom: 30px;
+}
+.header-s-2 select {
+    width: 200px; /* Ancho del select */
+    padding: 5px;
+    font-size: 1rem; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 5px; /* Borde redondeado */
+    appearance: none; /* Eliminar los estilos nativos del navegador */
+    background-color: #f7f7f7; /* Color de fondo */
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'); /* Icono de flecha desplegable */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    cursor: pointer; /* Cursor al pasar sobre el select */
+}
+.header-s-2 select:hover {
+    background-color: #eaeaea; /* Cambiar color de fondo al pasar sobre el select */
+}
+.header-s-2 select:focus {
+    outline: none; /* Eliminar el contorno al enfocar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra al enfocar */
+}
+.header-s-2 select option {
+    padding: 10px; /* Espacio interno para las opciones */
+}
+
+@media (width < 1200px) {
+    .logo{
+        display: none;
+    }
+    .contenedor-nav{
+        width: 100%;
+    }
+  }
+@media (width < 768px) {
+    .boton{
+        display: none;
+    }
+    .header-s{
+        display: none;
+        flex-direction: column;
+    }
+    .header-s-2{
+        display: block;
+    }
+}

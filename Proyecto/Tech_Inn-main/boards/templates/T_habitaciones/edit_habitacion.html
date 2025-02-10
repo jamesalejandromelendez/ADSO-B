@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}EDITAR TIPO HABITACION{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="/update_tipohabitacion/{{tipohabitacion.id}}">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Actualizar tipo de habitación</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="id">ID:</label>
+                    <input type="text" class="form-control" name="id" id="id" value="{{ tipohabitacion.id }}" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" class="form-control" name="tipo" id="tipo" value="{{ tipohabitacion.tipo }}">
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}

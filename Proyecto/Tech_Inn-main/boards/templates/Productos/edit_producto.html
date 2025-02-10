@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}EDITAR PRODUCTO{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="{% url 'update_producto' producto.id %}">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Actualizar datos del producto</h2>
+                </div>
+                {{ form.as_p }}
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-block">Actualizar</button>
+                </div>
+            </div>
+        </form> 
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}

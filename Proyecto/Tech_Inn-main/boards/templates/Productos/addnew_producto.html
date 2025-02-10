@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}AGREGAR PRODUCTO{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="/addnew_producto">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Ingresar datos del producto</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="id" class="form-label">ID:</label>
+                    {{ form.id }}
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    {{ form.nombre }}
+                </div>
+                <div class="mb-3">
+                    <label for="costo" class="form-label">Costo:</label>
+                    {{ form.costo }}
+                </div>
+                <div class="mb-3">
+                    <label for="stock_disponible" class="form-label">Stock Disponible:</label>
+                    {{ form.stock_disponible }}
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion" class="form-label">Descripción:</label>
+                    {{ form.descripcion }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_tipo" class="form-label">Id Tipo:</label>
+                    {{ form.id_tipo }}
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-block">Agregar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}

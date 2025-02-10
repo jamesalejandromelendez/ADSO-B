@@ -1,0 +1,176 @@
+
+ARCHIVO 1 base html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h4>CRUD DJANGO MYSQL</h4>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
+
+ARCHIVO 2 mostrar usuarios{% extends "base.html" %}
+{% block title %}USUARIOS{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <span><a href="/addnew" class="btn btn-primary">Aregar usuario</a></span>
+    <div class="table-responsive">
+        <table id="bootstrapdatatable" class="table table-striped table-bordered" width="100%">
+        <thead>
+            <th><input type="checkbox" id="checkall" /></th>
+            <th>ID</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            {% for usu in usuarios %}
+                <tr>
+                <td><input type="checkbox" class="checkthis" /></td>
+                <td>{{ usu.id }}</td>
+                <td>{{ usu.usuNombres }}</td>
+                <td>{{ usu.usuApellidos }}</td>
+                <td><a href="/edit/{{ usu.id }}" class="btn btn-primary">Edit</a></td>
+                <td><a href="/delete/{{ usu.id }}" class="btn btn-danger">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
+
+ARCHIVO 3 agreagar usuarios
+{% extends "base.html" %}
+
+{% block title %}AGREGAR USUARIOS{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/addnew">
+        {% csrf_token %}
+        <div class="container">
+            <div class="col-12">
+            <h3>Enter Details</h3>
+            </div>
+            <div class="mb-3">
+                <label>Nombres:</label>
+                {{ form.usuNombres }}
+            </div>
+            <div class="mb-3">
+                <label>Apellidos:</label>
+                {{ form.usuApellidos }}
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+
+ARCHIVO 4 editar/atualizar usuarios
+{% extends "base.html" %}
+
+{% block title %}EDITAR USUARIOS{% endblock title %}
+
+{% block content %}
+<div class="col-md-12">
+    <form method="POST" class="post-form" action="/update/{{usuario.id}}">
+        {% csrf_token %}
+        <div class="container">
+            <div class="col-12">
+                <h3>Update Details</h3>
+            </div>
+            <div class="mb-3">
+                <label>Usuarios ID:</label>
+                <input type="text" class="form-control" name="id" id="id_id" required maxlength="20" value="{{ usuario.id }}"/>
+            </div>
+            <div class="mb-3">
+                <label>Nombres:</label>
+                <input type="text" class="form-control" name="name" id="id_name" required maxlength="100" value="{{ usuario.usuNombres }}" />
+            </div>
+            <div class="mb-3">
+                <label>Apellidos:</label>
+                <input type="text" class="form-control" name="contact" id="id_contact" required maxlength="100" value="{{ usuario.usuApellidos }}" />
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-success btn-lg">Update</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+
+ARCHIVO 5 vistas
+from django.shortcuts import render, redirect
+from boards.forms import UsuarioForm
+from boards.models import Usuarios
+
+# Create your views here.
+def index(request):
+     return render(request,'base2.html')
+
+def crud(request):
+    usuarios = Usuarios.objects.all()
+    return render(request,'show.html', {'usuarios':usuarios})
+
+def addnew(request):
+    if request.method == 'POST':
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/crud')
+            except:
+                pass
+    else:
+        form = UsuarioForm()
+    return render(request,'index.html',{'form':form})
+
+def edit(request, id):
+    usuario = Usuarios.objects.get(id=id)
+    return render(request, 'edit.html', {'usuario':usuario})
+
+def update(request, id):
+    usuario = Usuarios.objects.get(id=id)
+    form = UsuarioForm(request.POST, instance = usuario)
+    if form.is_valid():
+        form.save()
+        return redirect('/crud')
+    return render(request, 'edit.html', {'usuario':usuario})
+
+def destroy(request, id):
+    usuario = Usuarios.objects.get(id=id)
+    usuario.delete()
+    return redirect('/crud')
+
+
+ARCHIVO 6 urls
+from django.contrib import admin
+from django.urls import path
+
+from boards import views
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index, name='inicio'),
+    path('crud', views.crud, name='index'),
+    path('addnew', views.addnew, name='addnew'),
+    path('edit/<int:id>', views.edit, name='edit'),
+    path('update/<int:id>', views.update, name='update'),
+    path('delete/<int:id>', views.destroy, name='destroy'),
+]

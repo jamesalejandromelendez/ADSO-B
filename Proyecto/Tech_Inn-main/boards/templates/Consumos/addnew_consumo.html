@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}AGREGAR CONSUMO{% endblock title %}
+
+{% block content %}
+<div class="col-md-6 offset-md-3">
+    <div class="border p-4" style="background-color: #222831; color: white; border-radius: 15px;">
+        <form method="POST" class="post-form" action="/addnew_consumo/">
+            {% csrf_token %}
+            <div class="container">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">Ingrese datos del consumo</h2>
+                </div>
+                <div class="mb-3">
+                    <label for="id_Reserva" class="form-label">ID Reserva:</label>
+                    {{ form.id_Reserva }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_Servicio" class="form-label">ID Servicio:</label>
+                    {{ form.id_Servicio }}
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad_s" class="form-label">Cantidad de servicios:</label>
+                    {{ form.cantidad_s }}
+                </div>
+                <div class="mb-3">
+                    <label for="id_Producto" class="form-label">ID Producto:</label>
+                    {{ form.id_Producto }}
+                </div>
+                <div class="mb-3">
+                    <label for="cantidad_p" class="form-label">Cantidad de productos:</label>
+                    {{ form.cantidad_p }}
+                </div>
+                <div class="mb-3">
+                    <label for="total" class="form-label">Total:</label>
+                    {{ form.total }}
+                </div>
+                <div class="mb-3">
+                    <label for="facturado" class="form-label">Facturado:</label>
+                    {{ form.facturado }}
+                </div>
+                <div class="mb-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-block">Agregar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer style="margin-top: 40px;">
+</footer>
+{% endblock content %}
