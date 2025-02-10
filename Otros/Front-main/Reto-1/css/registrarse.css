@@ -1,0 +1,181 @@
+/* Estilos generales */
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    font-family: "Rajdhani",sans-serif;
+}
+
+/* Encabezado navegación */
+
+header{
+    background: black;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+span{
+    color: #D61C4E;
+}
+.msj-seguridad{
+    font-size: 12px;
+}
+.enlace-titulo{
+    text-decoration: none;
+    color: white;
+}
+.contenedor-titulo-socials{
+    margin-left: 4%;
+}
+.contenedor-nav-buscar{
+    margin-right: 4%;
+}
+.contenedor-nav-buscar, nav, ul{
+    height: 100%;
+    height: 100%;
+    list-style: none;
+}
+.enlaces{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.registrarse{
+    color: #D61C4E;
+}
+.enlaces:hover{
+    color: #D61C4E;
+}
+.bi{
+    color: gray;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 10px;
+}
+.bi:hover{
+    color: white;
+}
+
+/* Seccion formulario */
+
+.titulo-logo{
+    width: 60%;
+    margin: 2% 20% 2% 20%;
+    text-align: center;
+}
+.titulo1{
+    margin-top: 90px;
+    color: black;
+}
+.contenedor-textura-formulario {
+    width: 60%;
+    height: 450px;
+    margin: 2% 20% 2% 20%;
+    background: lightgray;
+    border-radius: 0 10px 10px 0;
+}
+.textura {
+width: 30%;
+height: 100%;
+overflow: hidden;
+}
+.textura img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.formulario {
+width: 70%;
+}
+.formulario form{
+    display: flex;
+    flex-direction: column;
+}
+.formulario form .contenedor-label{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+.formulario form{
+    width: 80%;
+    height: 70%;
+    margin: 5% 10% 0 10%;
+    color: black;
+    padding: 20px;
+}
+.contenedor-ckeckbox{
+    font-size: 0.7rem;
+    margin: 10px;
+}
+.contenedor-ckeckbox input{
+    height: 12px;
+    margin-left: 10px;
+}
+.boton{
+    border-radius: 5px;
+    color: white;
+    width: 70%;
+    background: #D61C4E;
+    height: 40px;
+    margin: 2% 15% 0 15%;
+}
+.boton:hover{
+    color: black;
+    background: #be1a46;
+}
+
+/* Footer */
+
+footer{
+    background: black;
+    height: 70px;
+    margin-top: 70px;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Responsive  */
+
+@media screen and (max-width: 767px) {
+    h1{
+        font-size: 18px;
+    }
+    .bi{
+        display: none;
+    }
+    .enlaces{
+        font-size: 0.7rem;
+    }
+    .inicio{
+        display: none;
+    }
+    .contenedor-nav-buscar input{
+        display: none;
+    }
+    .contenedor-textura-formulario{
+        height: 400px;
+        flex-direction: column;
+        border-radius: 15px;
+    }
+    .textura{
+        display: none;
+    }
+    .formulario{
+        width: 100%;
+    }
+    .contenedor-ckeckbox label{
+        font-size: 10px;
+    }
+    .boton{
+        margin-top: 35px;
+    }
+}

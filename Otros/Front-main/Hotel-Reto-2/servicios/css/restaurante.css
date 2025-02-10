@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Oswald:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    /* background-image: url("../img/textura.jpg"); */
+    font-family: 'Oswald', sans-serif; 
+    
+}
+header {
+    background-image: linear-gradient( to right, #0b3b65, rgb(79, 62, 62), #0b3b65);
+    width: 100%;
+    color: white;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+header h1{
+    margin-left: 20px;
+    font-family: 'Lilita One', cursive;
+}
+span{
+    color: lightblue;
+}
+
+/* TIPOS */
+
+.enunciado{
+    background: #116A7B;
+    padding: 20px;
+    margin: 2% 10% 2% 10%;
+    color: white;
+}
+.enunciado h2{
+    font-family: 'Lilita One', cursive;
+}
+
+/* SERVICIOS */
+
+.servicios-1{
+    height: 300px;
+    margin: 2% 10% 0 10%;
+}
+.servicios-2{
+    height: 300px;
+    margin: 0 10% 0 10%;
+}
+.texto-grande{
+    font-size: 3rem;
+    font-family: 'Lilita One', cursive;
+    color: #116A7B;
+}
+.inglesa,.francesa,.rusa,.americana{
+    height: 250px;
+    width: 250px;
+    border: 2px solid;
+    padding: 10px;
+}
+.inglesa,.francesa{
+    margin-right: 80px;
+}
+.americana,.rusa{
+    margin-left: 80px;
+}
+.titulo-servicio{
+    text-align: center;
+    color: #116A7B;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.descripcion-servicio{
+    font-size: 0.8rem;
+    text-align: center;
+}

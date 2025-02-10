@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    padding: 30px;
+}
+
+.titulo {
+    font-family: 'Oswald', sans-serif;
+    color: chocolate;
+    font-size: 3rem;
+}
+
+nav {
+    background-color: lightgray;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0.8%;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.menu a:hover {
+    color: rgb(89, 89, 91);
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    list-style: none;
+    background-color: lightgray;
+}
+
+.submenu li:hover {
+    color: rgb(89, 89, 91);
+}
+
+.submenu li a {
+    display: block;
+}
+
+
+/* MENU */
+
+.banner_estatico {
+    margin: 1% 20% 0 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 400px;
+    background-image: url("../img/banner3.jpg");
+    background-size: cover;
+}
+
+.titulo_banner {
+    font-size: 3.5rem;
+    color: green;
+}
+
+.banner_estatico p {
+    width: 40%;
+    font-size: 1.5rem;
+    color: green;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/* CONTENIDO */
+
+.contenido {
+    margin: 1% 20% 0 20%;
+    display: table;
+}
+
+.entidad {
+    column-count: 2;
+    column-gap: 50px;
+    display: table-cell;
+}
+
+.articulo {
+    text-align: justify;
+}
+
+.articulo h2 {
+    font-size: 2rem;
+    padding: 20px 0 20px 0;
+}
+
+.aprendices {
+    width: 100%;
+}
+
+
+/* COMENTARIOS */
+
+.comentarios {
+    margin: 2% 20% 0 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.comentarios h3 {
+    font-size: 2rem;
+    padding: 20px 0 20px 0;
+}
+
+.comentarios p {
+    margin-bottom: 20px;
+}
+
+.comentarios a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+}
+
+.comentarios a:hover {
+    color: green;
+}
+
+
+/* FORMULARIO */
+
+.formulario {
+    margin: 1% 20% 0 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid black;
+}
+
+.formulario label {
+    font-size: 1.2rem;
+    padding: 20px 0 10px 0;
+}
+
+.formulario input {
+    height: 2rem;
+    width: 50%;
+}

@@ -1,0 +1,177 @@
+/* Estilos generales */
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    font-family: "Rajdhani",sans-serif;
+}
+
+/* Encabezado navegación */
+
+header{
+    background: black;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+span{
+    color: #D61C4E;
+}
+.contenedor-titulo-socials{
+    margin-left: 4%;
+}
+.contenedor-nav-buscar{
+    margin-right: 4%;
+}
+.contenedor-nav-buscar, nav, ul{
+    height: 100%;
+    height: 100%;
+    list-style: none;
+}
+.enlaces{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    margin-right: 20px;
+}
+.inicio{
+    color: #D61C4E;
+}
+.enlaces:hover{
+    color: #D61C4E;
+}
+.bi{
+    color: gray;
+    font-size: 15px;
+    padding: 5px;
+    margin-left: 10px;
+}
+.bi:hover{
+    color: white;
+}
+
+/* Section - Tipos Techno */
+
+.titulo-logo{
+    width: 92%;
+    margin: 2% 4% 2% 4%;
+}
+h2{
+    color: black;
+}
+.titulo1{
+    margin-top: 90px;
+}
+.contenedor-imagenes{
+    width: 92%;
+    margin: 0 4% 0 4%;
+    background: black;
+}
+.dupla-uno{
+    width: 50%;
+}
+.dupla-dos{
+    background: purple;
+    width: 50%;
+}
+.minimal, .acid{
+    height: 40%;
+    overflow: hidden;
+}
+.house, .ambient{
+    height: 60%;
+    overflow: hidden;
+}
+.contenedor-imagenes p{
+    font-size: 30px;
+    position: absolute;
+    z-index: 1;
+    padding: 20px;
+}
+.contenedor-imagenes img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+.contenedor-imagenes img:hover{
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+}
+
+/* Section - Artistas Populares */
+
+.artistas1,.artistas2{
+    width: 92%;
+    margin: 1% 4% 1% 4%;
+}
+.card-body a{
+    text-decoration: none;
+}
+
+/* Section - Festivales Techno */
+
+.contenedor-carrusel{
+    width: 92%;
+    margin: 1% 4% 1% 4%;
+}
+.carousel-item p{
+    font-size: 100px;
+    position: absolute;
+    z-index: 1;
+    padding: 20px;
+    color: white;
+}
+
+/* Footer */
+
+footer{
+    background: black;
+    height: 70px;
+    margin-top: 70px;
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+/* Responsive */
+
+@media screen and (max-width: 767px) {
+    h1{
+        font-size: 18px;
+    }
+    .bi{
+        display: none;
+    }
+    .enlaces{
+        font-size: 0.7rem;
+    }
+    .inicio{
+        display: none;
+    }
+    .contenedor-nav-buscar input{
+        display: none;
+    }
+    .contenedor-imagenes{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
+    .contenedor-imagenes .dupla-uno,.dupla-dos, img{
+        width: 100%;
+    }
+    .contenedor-imagenes p{
+        font-size: 20px;
+    }
+    .artistas1,.artistas2{
+        flex-direction: column;
+        align-items: center;
+    }
+}

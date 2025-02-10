@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Oswald:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    /* background-image: url("../img/textura.jpg"); */
+    font-family: 'Oswald', sans-serif;
+
+}
+header {
+    background-image: linear-gradient( to right, #0b3b65, rgb(79, 62, 62), #0b3b65);
+    width: 100%;
+    color: white;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+header h1{
+    margin-left: 20px;
+    font-family: 'Lilita One', cursive;
+}
+span{
+    color: lightblue;
+}
+
+/* BANNER */
+
+.contenedor-imagen,.contenedor-textos,.cards-form{
+    margin: 2% 10% 2% 10%;
+    overflow: hidden;
+}
+.contenedor-imagen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-imagen p{
+    color: white;
+    font-family: 'Lilita One', cursive;
+    font-size: 5rem;
+    z-index: 1;
+    position: absolute;
+}
+.contenedor-imagen img{
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    border-radius: 5px;
+}
+.contenedor-imagen img:hover{
+    -webkit-transform:scale(1.1);transform:scale(1.1);
+}
+.contenedor-textos p{
+    font-size: 1.2rem;
+}
+
+/* CARDS */
+.cards-form{
+    height: 720px;
+}
+.contenedor-tarjetas{
+    width: 50%;
+}
+.card-img-top{
+    height: 200px;
+    object-fit: cover;
+}
+
+/* FORM */
+
+.contenedor-formulario{
+    width: 50%;
+    background-image: url("../img/textura.jpg");
+    background-size: cover;
+}
+.contenedor-formulario p{
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Lilita One', cursive;
+}
+.formulario{
+    background: rgba(167, 222, 241, 0.884);
+    border: 1px solid;
+    border-radius: 10px;
+}
+.contenedor-label{
+    padding: 10px;
+}
+.contenedor-label label{
+    font-weight: bold;
+}
+.contenedor-label input{
+    height: 2.5rem;
+    width: 300px;
+}
+.contenedor-ckeckbox{
+    font-weight: bold;
+    margin-top: 12px;
+}
+.boton{
+    height: 2.5rem;
+    width: 300px;
+    margin: 30px 10px 10px 10px;
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Oswald:wght@600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body{
+    /* background-image: url("../img/textura.jpg"); */
+    font-family: 'Oswald', sans-serif; 
+}
+header {
+    background-image: linear-gradient( to right, #0b3b65, rgb(79, 62, 62), #0b3b65);
+    width: 100%;
+    color: white;
+    height: 75px;
+    display: flex;
+    align-items: center;
+}
+header h1{
+    margin-left: 20px;
+    font-family: 'Lilita One', cursive;
+}
+span{
+    color: lightblue;
+}
+
+/* BEBIDAS */
+
+.top{
+    margin: 2% 10% 2% 10%;
+    text-align: center;
+}
+.imagenes-bebidas{
+    display: flex;
+    height: 430px;
+}
+.imagenes-bebidas img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    /* opacity: .9;
+    transition: .5s ease; */
+}
+/* .imagenes-bebidas img:hover{
+    cursor: pointer;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+} */

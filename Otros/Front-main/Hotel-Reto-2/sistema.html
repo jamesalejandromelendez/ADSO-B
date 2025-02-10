@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN's FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/estilo_sistema.css">
+    <!-- CDN's BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- LOGO SENA -->
+    <link rel="icon" href="./img/logo verde.png" type="image/x-icon">
+    <!-- TITULO -->
+    <title>Hotel-Cide</title>
+</head>
+<body>
+ <!-- MENU DE NAVEGACIÓN -->
+    <header>
+        <nav>
+            <a href="./blog/index.html" onclick="seleccionar(this)">Blog</a>
+            <a href="#intro" onclick="seleccionar(this)" class="selected">Inicio</a>
+            <a href="#servicios" onclick="seleccionar(this)">Servicios</a>
+            <span><i class="incono_menu"><img src="./img/logo verde.png" alt="" srcset="" style="height: 40px; width: 42px;"></i></span>
+            <a href="#reservas" onclick="seleccionar(this)">Reservas</a>
+            <a href="#contactos" onclick="seleccionar(this)">Contactos</a>
+            <a href="#registro" onclick="seleccionar(this)">Registro</a>
+        </nav>
+    </header>
+
+    <!-- INTRODUCCION  (INICIO) -->
+
+    <section id="intro" class="bloque">
+        <div class="contenido d-flex flex-column align-items-center justify-content-center">
+            <div>
+                <h1>Disfrute de la tierra Muisca</h1>
+            </div>
+            <div class="formulario d-flex flex-column align-items-center">
+                <form class="" action="#servicios">
+                    <h3>Iniciar sesión</h3>
+                    <div class="info d-flex flex-column">
+                        <label for="">Usuario</label>
+                        <input id="nombreInput" type="text">
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Contraseña</label>
+                        <input id="contraseniaInput" type="password">
+                    </div>
+                    <div>
+                        <input id="validarButton" type="submit" value="Enviar" class="btn_enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+
+    <section id="servicios" class="bloque">
+        <div><h1 class="titulo">Nuestros servicios</h1></div>
+        <div class="contenido">
+            <div class="item servicio1">
+                <div class="overlay">
+                    <a href="./servicios/servicios/piscina.html"><h2>Piscina <br><span>Ver mas</span></h2></a>
+                </div>
+            </div>
+            <div class="item servicio2">
+                <div class="overlay">
+                    <a href="./servicios/servicios/restaurante.html"><h2>Restaurante <br><span>Ver mas</span></h2></a>
+                </div>
+            </div>
+            <div class="item servicio3">
+                <div class="overlay">
+                    <a href="./servicios/servicios/bar.html"><h2>Bar <br><span>Ver mas</span></h2></a>
+                </div>
+            </div>
+            <div class="item servicio4">
+                <div class="overlay">
+                    <a href="./servicios/servicios/spa.html"><h2>Spa <br><span>Ver mas</span></h2></a>
+                </div>
+            </div>
+            <div class="item servicio5">
+                <div class="overlay">
+                    <a href="./servicios/servicios/room.html"><h2>Room service <br><span>Ver mas</span></h2></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESERVAS -->
+
+    <section id="reservas" class="bloque">
+        <div class="contenido">
+            <div>
+                <h1 class="titulo">¿Desea reservar?</h1>
+            </div>
+            <div class="contenido">
+                <p>
+                    Las presentes condiciones generales están sujetas a lo dispuesto en la NTSH sectorial colombiana 003 (2003-02-24).
+                    <br><br>
+                    Esta norma tiene como objeto proporcionar los requisitos para ofrecer productos y servicios dando respuesta al cliente,
+                    realizar check in y check out de huéspedes y reservar habitaciones de acuerdo con procedimientos definidosen los establecimientos de alojamiento y hospedaje.
+                </p>
+                <div class="enlaces d-flex justify-content-between">
+                    <div class="item clausulas">
+                        <div class="overlay d-flex justify-content-center flex-column align-items-center">
+                            <h4>Clausulas</h4>
+                            <a class="enlaces" href="">ver más</a>
+                        </div>
+                    </div>
+                    <div class="item servicio5">
+                        <div class="overlay d-flex justify-content-center flex-column align-items-center">
+                            <h4>Condiciones de pago</h4>
+                            <a class="enlaces" href="">ver más</a>
+                        </div>
+                    </div>
+                    <div class="item servicio5">
+                        <div class="overlay d-flex justify-content-center flex-column align-items-center">
+                            <h4>Reservas</h4>
+                            <a class="enlaces" href="">ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="formulario-reserva">
+                <form class="formulario-reserva-form d-flex align-items-center justify-content-around" action="" method="">
+                    <div class="info-r d-flex flex-column">
+                        <label for="">Destino:</label>
+                        <input type="text" id="destino" name="" required><br><br>
+                    </div>
+                    <div class="info-r d-flex flex-column">
+                        <label for="">Fecha de Ingreso:</label>
+                        <input type="date" id="fecha_ingreso" name="" required><br><br>
+                    </div>
+                    <div class="info-r d-flex flex-column">
+                        <label for="">Fecha de Salida:</label>
+                        <input type="date" id="fecha_salida" name="" required><br><br>
+                    </div>
+                    <div class="info-r d-flex flex-column">
+                        <label for="">Cantidad de Personas:</label>
+                        <input type="number" id="cantidad_personas" name="" required><br><br>
+                    </div>
+                    <div class="info-r d-flex flex-column">
+                        <label for="">Tipo de Habitación:</label>
+                        <select id="tipo_habitacion" name="tipo_habitacion" required>
+                            <option >Individual</option>
+                            <option >Doble</option>
+                            <option >Suite</option>
+                        </select><br><br>
+                    </div>
+                    <input class="btn_enviar-r" type="submit" value="Consultar">
+                </form>        
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section id="contactos" class="bloque">
+        <div class="contenido">
+            <div class="datos">
+                <div class="item">
+                    <!-- <div class="icono">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div> -->
+                    <div class="datos">
+                        <h2>Direccion <i class="fa-solid fa-location-dot"></i></h2>
+                        <h3>Calle 13 # 10 -93, Soacha, Cundinamarca</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- <div class="icono">
+                        <i class="fa-solid fa-phone"></i>
+                    </div> -->
+                    <div class="datos">
+                        <h2>Telefono <i class="fa-solid fa-phone"></i></h2>
+                        <h3>(57) 601 5461500</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- <div class="icono">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div> -->
+                    <div class="datos">
+                        <h2>Email <i class="fa-regular fa-envelope"></i></h2>
+                        <h3>judicialcundinamarca@sena.edu.co</h3>
+                    </div>
+                </div>
+                <div class="item">
+                    <!-- <div class="icono">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div> -->
+                    <div class="datos">
+                        <h2>Whatsapp <i class="fa-brands fa-whatsapp"></i></h2>
+                        <h3>3168760255</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO CONTACTO -->
+
+            <div class="formulario d-flex flex-column align-items-center">
+                <form action="">
+                    <h3>Enviar mensaje</h3>
+                    <div class="info d-flex flex-column">
+                        <label for="">Nombre</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Apellido</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Email</label>
+                        <input type="email" name="" id="">
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Mensaje</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" name="" id="" value="Enviar" class="btn_enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGISTRO -->
+
+    <section id="registro" class="bloque">
+        <div class="contenido d-flex flex-column align-items-center">
+            <div>
+                <h1 class="titulo">Formulario de registro</h1>
+            </div>
+            <div class="formulario d-flex flex-column align-items-center justify-content-center">
+                <form action="">
+                    <h3>Regístrese</h3>
+                    <div class="info d-flex flex-column">
+                        <label for="">Nombre</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Apellido</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Email</label>
+                        <input type="email" name="" id="">
+                    </div>
+                    
+                    <div class="info d-flex flex-column">
+                        <label for="">Tipo doc</label>
+                        <select name="" id="">
+                            <option value="">Cedula</option>
+                            <option value="">Pasaporte</option>
+                            <option value="">NIP</option>
+                        </select>
+                    </div>
+                    <div class="info d-flex flex-column">
+                        <label for="">Nro. Doc</label>
+                        <input type="text" name="" id="">
+                    </div>
+                    <div>
+                        <input class="check" type="checkbox"> <span>Acepto el acuerdo de datos</span>
+                    </div>
+                    <div>
+                        <input type="submit" name="" id="" value="Enviar" class="btn_enviar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+
+    <script src="./js/sistema.js"></script>
+
+</body>
+</html>

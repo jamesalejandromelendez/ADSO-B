@@ -1,0 +1,16 @@
+Error de ruta (directorio)
+
+- Para resolver este problema, puedes seguir estos pasos:
+
+1. Verifica que el directorio 'C:\Users\T4RS\AppData\Roaming\npm' existe. 
+Si no existe, puedes crearlo manualmente. Abre un símbolo del sistema o una terminal y ejecuta el siguiente comando:
+
+mkdir C:\Users\T4RS\AppData\Roaming\npm (Esto creará el directorio necesario)
+
+2. Después de crear el directorio, intenta nuevamente ejecutar el comando npm que te estaba dando el error. 
+Si el problema persiste, puedes intentar reinstalar npm globalmente utilizando el siguiente comando:
+
+npm install -g npm@latest (Esto reinstalará la última versión de npm de forma global en tu sistema)
+
+3. Si el problema continúa después de reinstalar npm, puedes considerar desinstalar completamente Node.js 
+y npm de tu sistema y luego volver a instalarlos desde cero. Asegúrate de descargar la última versión de Node.js desde el sitio web oficial.
